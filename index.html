@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CutFusion Studio — Motion & Graphic Design</title>
-  <meta name="description" content="CutFusion Studio — a bold motion and graphic design studio crafting immersive visual experiences. We specialize in motion design, brand identity, 3D, and visual storytelling.">
-  <meta name="keywords" content="motion design studio, graphic design, brand identity, motion graphics, visual design, creative studio, CutFusion">
+  <title>CutFusion Studio — Premium AI Video Production</title>
+  <meta name="description" content="CutFusion Studio — a world-class creative studio blending real cinema, motion design 2D/3D, and AI-powered video production to scale brands with unmatched visual impact.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e0e0e0'/%3E%3Cstop offset='100%25' style='stop-color:%23ffffff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='2' y='24' font-family='sans-serif' font-size='22' font-weight='900' fill='url(%23g)'%3ECF%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
   <!-- Preloader -->
-  <div class="preloader" id="preloader">
-    <div class="preloader-text">CUTFUSION</div>
-    <div class="preloader-bar">
-      <div class="preloader-bar-fill"></div>
-    </div>
+  <div class="preloader" id="preloader" style="background: #000;">
+    <video id="preloader-video" autoplay muted playsinline style="max-width: 400px; width: 35vw; height: auto; object-fit: contain;">
+      <source src="assets/videos/logo_preload.mp4">
+    </video>
   </div>
 
   <!-- Custom Cursor -->
@@ -31,990 +29,699 @@
 
   <!-- Navigation -->
   <nav class="nav" id="navbar">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <!-- Logo -->
-      <a href="#" class="nav-logo magnetic" data-hover style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-        <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 96px; width: auto; object-fit: contain;">
-      </a>
-      
-      <!-- CTA -->
-      <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 8px 16px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">
-        GET A QUOTE
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="12" fill="#fff" fill-opacity="0.2"/>
-          <polygon points="10 8 16 12 10 16" fill="#000"/>
-        </svg>
-      </a>
-    </div>
+    <a href="#" class="nav-logo magnetic" data-hover style="display: flex; align-items: center; text-decoration: none;">
+      <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 110px; width: auto; object-fit: contain;">
+    </a>
+
+    <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 10px 20px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
+      GET A QUOTE
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12" fill="#fff" fill-opacity="0.2"/><polygon points="10 8 16 12 10 16" fill="#000"/></svg>
+    </a>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="hero" style="min-height: 100vh; padding: 180px 0 100px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-    
-    <!-- 3D Logo Background -->
-    <div class="hero-3d-asset" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; opacity: 0.8; mix-blend-mode: lighten;">
-      <img src="assets/images/hero_3d_logo.png" alt="3D H Logo" style="width: 100%; max-width: 800px; object-fit: contain; transform: translateY(-50px);">
+  <section class="hero" id="hero">
+    <!-- Aesthetic Aurora Grain Background -->
+    <div style="position: absolute; inset: 0; z-index: 0; background: #050505; overflow: hidden;">
+      <!-- Main radial glow from top -->
+            <div id="aurora-glow" style="position: absolute; top: -10%; left: 50%; width: 140vw; height: 90vh; margin-left: -70vw; background: radial-gradient(ellipse at 50% 0%, #ffe3c2 0%, #ff8c00 15%, #e64000 30%, #2a0a00 50%, transparent 100%); filter: blur(30px); opacity: 0.95; will-change: transform; transition: transform 0.15s ease-out;"></div>
+      
+      <!-- Vertical streak lines -->
+      <div id="aurora-streaks" style="position: absolute; top: -10%; left: -10%; width: 120%; height: 120%; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, transparent 10px, rgba(0,0,0,0.15) 20px); mix-blend-mode: overlay; filter: blur(2px); will-change: transform; transition: transform 0.15s ease-out;"></div>
+      
+      <!-- Grain overlay -->
+      <div style="position: absolute; inset: 0; background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E'); opacity: 0.25; mix-blend-mode: overlay; pointer-events: none;"></div>
+      
+      <!-- Bottom dark fade -->
+      <div style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, var(--bg-primary) 0%, rgba(10,10,15,0.8) 20%, transparent 100%); z-index: 1;"></div>
     </div>
-
-    <!-- Strong Orange Bottom Gradient -->
-    <div class="hero-gradient-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(255, 81, 0, 0.9) 0%, rgba(255, 81, 0, 0.4) 40%, transparent 100%); z-index: 1;"></div>
-    <div class="hero-gradient-black" style="position: absolute; bottom: -5px; left: 0; width: 100%; height: 150px; background: linear-gradient(to top, var(--bg-primary) 0%, transparent 100%); z-index: 2;"></div>
 
     <div class="container" style="position: relative; z-index: 3;">
-      <div class="hero-content" style="max-width: 1200px; margin: 0 auto; margin-top: 15vh;">
-        <h1 class="hero-title" style="font-size: clamp(3rem, 7vw, 6.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">
-          <span class="line" style="display: block; overflow: hidden;"><span class="line-inner" style="display: block;">WE MAKE</span></span>
-          <span class="line" style="display: block; overflow: hidden;"><span class="line-inner" style="display: block;">VIDEO THAT <span style="color: #fff;">CONVERTS.</span></span></span>
-          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; justify-content: space-between;">
-            <span class="line" style="display: block; overflow: hidden;"><span class="line-inner" style="display: block;">YOUR BRAND IS NEXT.</span></span>
-            <p style="font-family: var(--font-body); font-size: 0.9rem; max-width: 220px; line-height: 1.4; color: #fff; font-weight: 500; text-transform: none; letter-spacing: 0; opacity: 0; animation: fadeInUp 0.8s var(--ease-out-expo) 2.8s forwards;">
-              Motion design & video editing for SaaS, creators, and brands that want to stand out
-            </p>
-          </div>
+      <div class="hero-content" style="max-width: 1200px; margin: 0 auto; margin-top: 15vh; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div class="hero-animate" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.1rem; font-weight: 500; letter-spacing: -0.02em; color: #fff; margin-bottom: 24px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.15); padding: 12px 32px; border-radius: 100px; box-shadow: 0 0 40px rgba(255, 81, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px);">
+          <span style="display: inline-block; width: 8px; height: 8px; background: #ff5100; border-radius: 50%; box-shadow: 0 0 8px #ff5100; animation: pulse-live 1.5s infinite;"></span> Introducing AI-Powered Video Studio 🎉
+        </div>
+
+        <h1 style="font-family: 'Inter', system-ui, sans-serif; font-size: clamp(4rem, 10vw, 9.5rem); text-transform: none; line-height: 0.85; letter-spacing: -0.06em; margin-bottom: 32px; font-weight: 800; position: relative;">
+          <span class="hero-animate" style="display: block; background: linear-gradient(180deg, #ffffff 0%, #888888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">We make video</span>
+          <span class="hero-animate" style="display: block; color: #fff; position: relative; z-index: 2;">that converts<span style="color: var(--accent-primary); filter: drop-shadow(0 0 30px rgba(255,81,0,0.8));">.</span></span>
+          <span class="hero-animate" style="display: flex; justify-content: center; align-items: center; margin-top: 0px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));">
+            <span id="typewriter" style="background: linear-gradient(180deg, #ffffff 0%, #ffcda8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap;"></span>
+            <span class="type-cursor" style="display: inline-block; width: clamp(4px, 1vw, 8px); height: 0.85em; background: #fff; box-shadow: 0 0 20px #ff5100; margin-left: 12px; border-radius: 10px; animation: blink 1s step-end infinite;"></span>
+          </span>
         </h1>
+
+        <div class="hero-animate" style="display: flex; flex-direction: column; align-items: center; gap: 32px; margin-bottom: 36px;">
+          <p style="font-family: var(--font-body); font-size: 1.05rem; max-width: 540px; line-height: 1.6; color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0;">
+            We manage your social media, blending premium design and high-end motion graphics to elevate your brand and dominate your online presence.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
+            <a href="#contact" class="magnetic" data-hover style="display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: rgba(255,81,0,0.15); color: #fff; padding: 10px 10px 10px 32px; border-radius: 100px; font-weight: 700; font-size: 1.05rem; text-decoration: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(255,81,0,0.15); border: 1px solid rgba(255,81,0,0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(255,81,0,0.3)'; this.style.background='rgba(255,81,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255,81,0,0.15)'; this.style.background='rgba(255,81,0,0.15)';">
+              <span style="position: relative; z-index: 1;">Start Your Project</span>
+              <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #000; color: #fff; border-radius: 50%;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </a>
+            <a href="#services" class="btn-secondary magnetic" data-hover style="display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 1rem; opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.7';">
+              <span style="width: 40px; height: 1px; background: var(--text-primary);"></span>
+              Explore Services
+            </a>
+          </div>
+        </div>
+
+        <div class="capability-badges hero-animate">
+          <span class="capability-badge">Real Cinema</span>
+          <span class="capability-badge">Motion 2D / 3D</span>
+          <span class="capability-badge">AI Generative</span>
+          <span class="capability-badge">Hybrid Hollywood</span>
+          <span class="capability-badge">VSL &amp; Avatars</span>
+          <span class="capability-badge">YouTube Growth</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Marquee -->
-  <div class="marquee-section" style="border: none; padding: 20px 0; background: var(--bg-primary);">
-    <div class="marquee-track" style="gap: 40px; animation-duration: 25s;">
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Motion Design</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Video Editing</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">SaaS Explainers</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">YouTube Editing</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">AI Post-Production</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Short Form</span>
-      <!-- Duplicate -->
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Motion Design</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Video Editing</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">SaaS Explainers</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">YouTube Editing</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">AI Post-Production</span>
-      <span class="marquee-item" style="color: rgba(255,255,255,0.15); font-size: 1.5rem; letter-spacing: 0.05em; font-family: var(--font-body); font-weight: 600;">Short Form</span>
-    </div>
-  </div>
-
-  <!-- Video Section -->
-  <section class="section video-section" style="padding-top: 80px; text-align: center;">
+  <!-- VSL Video Section -->
+  <section class="section" style="padding-top: 80px; text-align: center;">
     <div class="container">
-      <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em;">
+      <h2 class="reveal" style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em;">
         GREAT VIDEO SELLS.<br>
-        <span style="color: #aaa;">BORING VIDEO DOESN'T.</span>
+        <span style="color: var(--text-muted);">BORING VIDEO DOESN'T.</span>
       </h2>
-      <p style="font-size: 0.85rem; color: #888; max-width: 600px; margin: 0 auto 40px; line-height: 1.5; font-family: var(--font-body);">
-        We blend cinematic motion design with razor-sharp editing to produce videos your audience can't scroll past. From SaaS product explainers to long-form YouTube — we make every frame count.
+      <p class="reveal" style="font-size: 0.9rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
+        Every second, every cut, every creative decision is optimized to solve a real conversion problem for your brand. We speak the language of Growth, Paid Media, and Performance.
       </p>
-
-      <!-- VSL Video Embed (Replace src with your YouTube or Vimeo link) -->
-      <div class="vsl-wrapper" style="width: 100%; max-width: 900px; aspect-ratio: 16/9; margin: 0 auto 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; background: #111;">
-        <!-- Example: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
+      <div class="vsl-wrapper reveal" style="width: 100%; max-width: 900px; aspect-ratio: 16/9; margin: 0 auto 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; background: #111;">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?rel=0&showinfo=0" title="CutFusion Studio VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
       </div>
-
-      <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 8px 16px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 auto;">
-        GET A QUOTE
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-          <circle cx="12" cy="12" r="12" fill="#fff" fill-opacity="0.2"/>
-          <polygon points="10 8 16 12 10 16" fill="#000"/>
-        </svg>
-      </a>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="section services-section" style="padding-top: 120px;">
+  <!-- Client Logos Marquee Section -->
+  <section class="clients-section">
     <div class="container">
-      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 40px; text-align: center; letter-spacing: -0.01em;">
-        MOTION, EDITING, <span style="color: #666;">AI PRODUCTION</span><br>
-        —WE'VE GOT YOU <span style="color: #666;">COVERED.</span>
-      </h2>
-
-      <div class="services-cards" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory;">
-        
-        <!-- Card 1 (Orange) -->
-        <div class="s-card" style="min-width: 280px; flex: 1; background: var(--accent-primary); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; scroll-snap-align: start;">
-          <h3 style="font-family: var(--font-display); font-size: 2rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px;">
-            MOTION<br>EXPLAINER<br>FOR SAAS
-          </h3>
-          <p style="font-size: 0.8rem; color: rgba(0,0,0,0.7); line-height: 1.4; font-family: var(--font-body); font-weight: 500;">
-            Cinematic animated explainers that turn complex SaaS products into instant "I need this" moments for your audience.
-          </p>
-        </div>
-
-        <!-- Card 2 (White) -->
-        <div class="s-card" style="min-width: 280px; flex: 1; background: #fff; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; scroll-snap-align: start;">
-          <h3 style="font-family: var(--font-display); font-size: 2rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px;">
-            LONG &amp;<br>SHORT FORM<br>EDITING
-          </h3>
-          <p style="font-size: 0.8rem; color: rgba(0,0,0,0.6); line-height: 1.4; font-family: var(--font-body); font-weight: 500;">
-            Precision editing for podcasts, documentaries, short-form reels, and everything in between — on time, every time.
-          </p>
-        </div>
-
-        <!-- Card 3 (Dark Gray) -->
-        <div class="s-card" style="min-width: 280px; flex: 1; background: #222; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; scroll-snap-align: start;">
-          <h3 style="font-family: var(--font-display); font-size: 2rem; color: #fff; text-transform: uppercase; line-height: 1; margin-bottom: 40px;">
-            YOUTUBE<br>VIDEO<br>EDITING
-          </h3>
-          <p style="font-size: 0.8rem; color: #888; line-height: 1.4; font-family: var(--font-body); font-weight: 500;">
-            Hooks, cuts, B-roll, and pacing optimized for watch time. We edit for the algorithm and your audience.
-          </p>
-        </div>
-
-        <!-- Card 4 (Black/Wide) -->
-        <div class="s-card" style="min-width: 400px; flex: 2; background: #0a0a0a; border: 1px solid #222; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px; scroll-snap-align: start; position: relative; overflow: hidden;">
-          <h3 style="font-family: var(--font-display); font-size: 2rem; color: #fff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; position: relative; z-index: 2;">
-            AI VIDEO<br>POST<br>PRODUCTION
-          </h3>
-          <div style="position: absolute; right: -20px; top: 40px; width: 180px; height: 180px; opacity: 0.8; z-index: 1;">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="50" cy="50" rx="40" ry="25" transform="rotate(-30 50 50)" stroke="url(#silverGrad)" stroke-width="12" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="silverGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#ff5100"/>
-                  <stop offset="0.5" stop-color="#ff8c00"/>
-                  <stop offset="1" stop-color="#222"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <p style="font-size: 0.8rem; color: #888; line-height: 1.4; font-family: var(--font-body); font-weight: 500; position: relative; z-index: 2; max-width: 70%;">
-            AI-assisted color grading, voice cloning, auto-subtitles, and scene generation — cutting production time in half without cutting quality.
-          </p>
-        </div>
-
-      </div>
+      <div class="clients-tag">Trusted by innovative brands &amp; creators across Europe</div>
     </div>
-  </section>
-
-  <!-- Growth Stats Section -->
-  <section class="section growth-section" style="padding-top: 80px;">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
-        
-        <!-- Left Column: Title & Main Stat -->
-        <div>
-          <h2 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 1; margin-bottom: 40px; letter-spacing: -0.02em;">
-            THIS IS WHAT<br>OUR WORK<br>DELIVERS
-          </h2>
-          
-          <div class="stat-card" style="background: #111; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="padding: 24px; position: relative; min-height: 200px;">
-              <h3 style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase;">SAAS<br>EXPLAINER</h3>
-              
-              <div style="position: absolute; right: 24px; top: 24px; text-align: right;">
-                <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">+340%</div>
-                <div style="color: #555; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 8px;">trial signups</div>
-                <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">2:30</div>
-                <div style="color: #555; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 8px;">avg watch time</div>
-                <div style="color: var(--accent-primary); font-weight: 700; font-size: 0.9rem;">92%</div>
-                <div style="color: #555; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 8px;">retention</div>
-                <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">3</div>
-                <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">days delivered</div>
-              </div>
-
-              <!-- Graph visualization -->
-              <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to top, rgba(255,81,0,0.4) 0%, transparent 100%); clip-path: polygon(0 100%, 100% 100%, 100% 20%, 75% 60%, 50% 80%, 25% 90%, 0 95%);"></div>
-              <svg width="100%" height="100px" style="position: absolute; bottom: 0; left: 0; overflow: visible;">
-                <polyline points="0,95 25,90 50,80 75,60 100,20" fill="none" stroke="var(--accent-primary)" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div style="background: #fff; padding: 20px 24px; display: flex; align-items: baseline; justify-content: space-between;">
-              <span style="font-family: var(--font-display); font-size: 3.5rem; color: #000; line-height: 1;">4.8x</span>
-              <span style="color: #666; font-size: 0.75rem; font-family: var(--font-body); font-weight: 500;">avg conversion lift post-explainer</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Secondary Stats -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          
-          <div class="stat-card" style="background: #111; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="padding: 24px; position: relative; min-height: 160px;">
-              <h3 style="font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase;">YOUTUBE<br>CREATOR</h3>
-              
-              <div style="position: absolute; right: 24px; top: 24px; text-align: right; display: flex; flex-direction: row; gap: 16px;">
-                <div>
-                  <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">3.2M</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">views</div>
-                </div>
-                <div>
-                  <div style="color: var(--accent-primary); font-weight: 700; font-size: 0.9rem;">68%</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">avg retention</div>
-                </div>
-                <div>
-                  <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">48h</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">turnaround</div>
-                </div>
-                <div>
-                  <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">12</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">vids/month</div>
-                </div>
-              </div>
-
-              <!-- Graph visualization -->
-              <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background: linear-gradient(to top, rgba(255,81,0,0.4) 0%, transparent 100%); clip-path: polygon(0 100%, 100% 100%, 100% 20%, 60% 70%, 0 95%);"></div>
-              <svg width="100%" height="80px" style="position: absolute; bottom: 0; left: 0; overflow: visible;">
-                <polyline points="0,75 60,55 100,15" fill="none" stroke="var(--accent-primary)" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div style="background: #fff; padding: 16px 24px; display: flex; align-items: baseline; justify-content: space-between;">
-              <span style="font-family: var(--font-display); font-size: 3rem; color: #000; line-height: 1;">500K+</span>
-              <span style="color: #666; font-size: 0.7rem; font-family: var(--font-body); font-weight: 500;">views driven by our edits</span>
-            </div>
-          </div>
-
-          <div class="stat-card" style="background: #111; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
-            <div style="padding: 24px; position: relative; min-height: 140px; display: flex; justify-content: space-between;">
-              <h3 style="font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase;">AI POST<br>PRODUCTION<br>WORKFLOW</h3>
-              
-              <div style="text-align: right; display: flex; flex-direction: column; gap: 8px;">
-                <div>
-                  <div style="color: #fff; font-weight: 700; font-size: 1.1rem;">60%</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">faster delivery</div>
-                </div>
-                <div>
-                  <div style="color: var(--accent-primary); font-weight: 700; font-size: 1.1rem;">AI</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">color grading</div>
-                </div>
-                <div>
-                  <div style="color: #fff; font-weight: 700; font-size: 1.1rem;">Auto</div>
-                  <div style="color: #555; font-size: 0.6rem; text-transform: uppercase;">subtitles & subs</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       PORTFOLIO BENTO GRID SECTION
-       ══════════════════════════════════════════ -->
-  <section class="section portfolio-bento-section" id="works" style="padding-top: 100px; padding-bottom: 80px;">
-    <div class="container">
-
-      <!-- Header row -->
-      <div class="portfolio-header reveal" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px;">
-        <div>
-          <p style="font-family: var(--font-body); font-size: 0.8rem; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px;">Selected Work</p>
-          <h2 style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">OUR BEST<br>PROJECTS</h2>
-        </div>
-        <a href="portfolio.html" class="portfolio-cta-btn magnetic" data-hover style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: #fff; text-decoration: none; transition: all 0.3s ease; white-space: nowrap; background: rgba(255,255,255,0.04); backdrop-filter: blur(10px);">
-          View Full Portfolio
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Bento Grid -->
-      <div class="portfolio-bento-grid">
-
-        <!-- LARGE TILE — SaaS Explainer (spans 2 cols, 2 rows) -->
-        <div class="bento-tile bento-tile--large reveal" style="grid-column: span 2; grid-row: span 2;">
-          <div class="bento-img-wrap">
-            <img src="assets/images/portfolio_saas.png" alt="SaaS Motion Explainer" loading="lazy">
-            <div class="bento-overlay"></div>
-          </div>
-          <div class="bento-info">
-            <span class="bento-tag">Motion Explainer</span>
-            <h3 class="bento-title">SaaS Product Explainer</h3>
-            <p class="bento-desc">Cinematic animated explainer for a B2B SaaS platform — boosted trial signups by 340%.</p>
-          </div>
-          <a href="portfolio.html#saas" class="bento-link" aria-label="View SaaS Explainer">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- TALL TILE — YouTube Editing (spans 1 col, 2 rows) -->
-        <div class="bento-tile bento-tile--tall reveal" style="grid-row: span 2;">
-          <div class="bento-img-wrap">
-            <img src="assets/images/portfolio_youtube.png" alt="YouTube Editing" loading="lazy">
-            <div class="bento-overlay"></div>
-          </div>
-          <div class="bento-info">
-            <span class="bento-tag">YouTube Editing</span>
-            <h3 class="bento-title">Long-Form Creator Series</h3>
-            <p class="bento-desc">68% avg watch-time retention across 50+ episodes.</p>
-          </div>
-          <a href="portfolio.html#youtube" class="bento-link" aria-label="View YouTube Project">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- WIDE TILE — Short Form (spans 2 cols) -->
-        <div class="bento-tile bento-tile--wide reveal" style="grid-column: span 2;">
-          <div class="bento-img-wrap">
-            <img src="assets/images/portfolio_short.png" alt="Short Form Editing" loading="lazy">
-            <div class="bento-overlay"></div>
-          </div>
-          <div class="bento-info">
-            <span class="bento-tag">Short Form</span>
-            <h3 class="bento-title">Viral Reels Campaign</h3>
-            <p class="bento-desc">30-second cuts that amassed 500K+ views across platforms.</p>
-          </div>
-          <a href="portfolio.html#shortform" class="bento-link" aria-label="View Short Form Project">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- STANDARD TILE — AI Post Production -->
-        <div class="bento-tile reveal">
-          <div class="bento-img-wrap">
-            <img src="assets/images/portfolio_ai.png" alt="AI Post Production" loading="lazy">
-            <div class="bento-overlay"></div>
-          </div>
-          <div class="bento-info">
-            <span class="bento-tag">AI Production</span>
-            <h3 class="bento-title">AI Post Pipeline</h3>
-            <p class="bento-desc">60% faster delivery with zero quality loss.</p>
-          </div>
-          <a href="portfolio.html#ai" class="bento-link" aria-label="View AI Project">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-        <!-- STANDARD TILE — Motion 3D -->
-        <div class="bento-tile reveal">
-          <div class="bento-img-wrap">
-            <img src="assets/images/portfolio_motion.png" alt="3D Motion Design" loading="lazy">
-            <div class="bento-overlay"></div>
-          </div>
-          <div class="bento-info">
-            <span class="bento-tag">3D Motion</span>
-            <h3 class="bento-title">Brand Motion Identity</h3>
-            <p class="bento-desc">Full 3D motion identity for a tech startup launch.</p>
-          </div>
-          <a href="portfolio.html#motion" class="bento-link" aria-label="View Motion Project">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-      </div><!-- /bento grid -->
-
-      <!-- Bottom CTA -->
-      <div style="text-align: center; margin-top: 56px;">
-        <a href="portfolio.html" class="btn-view-all magnetic" data-hover>
-          VIEW ALL PROJECTS
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       CLIENTS — Animated Infinite Marquee
-       ══════════════════════════════════════════ -->
-  <section class="clients-section" id="clients">
-    <div class="container">
-      <p class="clients-tag">Trusted by creators &amp; brands worldwide</p>
-    </div>
-
-    <!-- ROW 1: Brand logos scrolling LEFT -->
     <div class="clients-marquee-wrapper">
       <div class="clients-marquee clients-marquee--left">
-        <!-- Netflix -->
-        <div class="client-logo" style="--brand-color: #E50914;">
-          <svg viewBox="0 0 111 30" fill="currentColor"><path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.625-5.062-.938l6.031-13.874L94.468 0H99.5l3.062 7.874L105.624 0h5.062l-5.624 14.28zM90.47 0c-.782 4.666-1.5 9.312-2.562 13.656C86.971 9 85.971 4.687 84.971 0h-4.5c-.093.312-4.218 14.5-5.187 18.125 1-.25 2.063-.438 3.063-.625.562-2.312 1.156-4.687 1.687-7.031.844 3.469 1.625 6.969 2.375 10.469 1-.188 2-.344 3-.531C87.033 13.937 88.596 7 90.064 0H90.47z"/></svg>
-        </div>
-        <!-- Adobe -->
-        <div class="client-logo" style="--brand-color: #FF0000;">
-          <svg viewBox="0 0 60 60" fill="currentColor"><path d="M0 0h23.4L30 17.1 36.6 0H60v60H38.4L30 38.7 21.6 60H0V0zm24 36l6-15.6L36 36h-4.8L30 32.4 28.8 36H24z"/></svg>
-        </div>
-        <!-- Spotify -->
-        <div class="client-logo" style="--brand-color: #1DB954;">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        </div>
-        <!-- Figma -->
-        <div class="client-logo" style="--brand-color: #A259FF;">
-          <svg viewBox="0 0 38 57" fill="currentColor"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></svg>
-        </div>
-        <!-- Google -->
-        <div class="client-logo" style="--brand-color: #4285F4;">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        </div>
-        <!-- Apple -->
-        <div class="client-logo" style="--brand-color: #A3AAAE;">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        </div>
-        <!-- YouTube Channel: MKBHD -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #E53935;">
-          <div class="yt-profile">
-            <span class="yt-avatar" style="background: #E53935;">M</span>
-            <div class="yt-info"><span class="yt-name">MKBHD</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-          </div>
-        </div>
-        <!-- YouTube Channel: Peter McKinnon -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FF6F00;">
-          <div class="yt-profile">
-            <span class="yt-avatar" style="background: #FF6F00;">P</span>
-            <div class="yt-info"><span class="yt-name">Peter McKinnon</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-          </div>
-        </div>
-        <!-- YouTube Channel: The Futur -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FFD600;">
-          <div class="yt-profile">
-            <span class="yt-avatar" style="background: #FFD600; color: #000;">F</span>
-            <div class="yt-info"><span class="yt-name">The Futur</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-          </div>
-        </div>
-        <!-- YouTube Channel: Casey Neistat -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FF1744;">
-          <div class="yt-profile">
-            <span class="yt-avatar" style="background: #FF1744;">C</span>
-            <div class="yt-info"><span class="yt-name">Casey Neistat</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-          </div>
-        </div>
-        <!-- ── DUPLICATE SET for seamless loop ── -->
-        <div class="client-logo" style="--brand-color: #E50914;"><svg viewBox="0 0 111 30" fill="currentColor"><path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.625-5.062-.938l6.031-13.874L94.468 0H99.5l3.062 7.874L105.624 0h5.062l-5.624 14.28z"/></svg></div>
-        <div class="client-logo" style="--brand-color: #FF0000;"><svg viewBox="0 0 60 60" fill="currentColor"><path d="M0 0h23.4L30 17.1 36.6 0H60v60H38.4L30 38.7 21.6 60H0V0zm24 36l6-15.6L36 36h-4.8L30 32.4 28.8 36H24z"/></svg></div>
-        <div class="client-logo" style="--brand-color: #1DB954;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02z"/></svg></div>
-        <div class="client-logo" style="--brand-color: #A259FF;"><svg viewBox="0 0 38 57" fill="currentColor"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/></svg></div>
-        <div class="client-logo client-logo--yt" style="--brand-color: #E53935;"><div class="yt-profile"><span class="yt-avatar" style="background:#E53935;">M</span><div class="yt-info"><span class="yt-name">MKBHD</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div></div></div>
-        <div class="client-logo client-logo--yt" style="--brand-color: #FF6F00;"><div class="yt-profile"><span class="yt-avatar" style="background:#FF6F00;">P</span><div class="yt-info"><span class="yt-name">Peter McKinnon</span><svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div></div></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.96 4.029C15.42 4.029 14.1 4.78 13.1 5.92c-.99-1.14-2.31-1.89-3.85-1.89C6.09 4.029 3.5 6.62 3.5 9.78c0 4.88 5.71 8.84 9.07 10.19.34.14.71.14 1.05 0 3.36-1.35 9.07-5.31 9.07-10.19 0-3.16-2.59-5.751-5.73-5.751z"/></svg><span class="client-logo-text">HYPERION</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="client-logo-text">AURA TECH</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span class="client-logo-text">VELOCITY</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg><span class="client-logo-text">LUMEN LUXE</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg><span class="client-logo-text">NEXUS MEDIA</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg><span class="client-logo-text">VORTEX D2C</span></div>
+        <!-- Duplicate for continuous loop -->
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.96 4.029C15.42 4.029 14.1 4.78 13.1 5.92c-.99-1.14-2.31-1.89-3.85-1.89C6.09 4.029 3.5 6.62 3.5 9.78c0 4.88 5.71 8.84 9.07 10.19.34.14.71.14 1.05 0 3.36-1.35 9.07-5.31 9.07-10.19 0-3.16-2.59-5.751-5.73-5.751z"/></svg><span class="client-logo-text">HYPERION</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="client-logo-text">AURA TECH</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span class="client-logo-text">VELOCITY</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg><span class="client-logo-text">LUMEN LUXE</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 2 22 22 22"/></svg><span class="client-logo-text">NEXUS MEDIA</span></div>
+        <div class="client-logo" data-hover><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg><span class="client-logo-text">VORTEX D2C</span></div>
       </div>
     </div>
   </section>
 
-  <!-- DUMMY placeholder to preserve existing HTML flow — actual clients section ends above -->
-  <div id="clients-placeholder" style="display:none;">
-    <div class="clients-track">
-        <!-- Netflix -->
-        <div class="client-logo" data-hover style="--brand-color: #E50914;">
-          <svg viewBox="0 0 111 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.625-5.062-.938l6.031-13.874L94.468 0H99.5l3.062 7.874L105.624 0h5.062l-5.624 14.28zM90.47 0c-.782 4.666-1.5 9.312-2.562 13.656C86.971 9 85.971 4.687 84.971 0h-4.5c-.093.312-4.218 14.5-5.187 18.125 1-.25 2.063-.438 3.063-.625.562-2.312 1.156-4.687 1.687-7.031.844 3.469 1.625 6.969 2.375 10.469 1-.188 2-.344 3-.531C87.033 13.937 88.596 7 90.064 0H90.47zM76.905 7.625c-.218 0-.468.062-.718.188-.5.25-.844.687-1.062 1.188-.157.343-.282.718-.375 1.093C73.812 6.437 72 4.187 69.375 4.187c-3.375 0-5.125 3.344-5.53 6.907l-.032.28c-.188 2.344.282 4.938 2.25 6.438.906.687 2.094 1.062 3.312 1.062 2.531 0 4.375-2.062 5.344-4.28.093.686.156 1.374.187 2.093 0 .75-.031 1.5-.124 2.25 1.062-.187 2.093-.406 3.124-.625V0C76.655.812 76.03 4.094 76.905 7.625zM71.374 15.75c-1.844 0-2.438-2-2.438-3.625s.656-3.437 2.438-3.437c1.844 0 2.375 1.812 2.375 3.437s-.531 3.625-2.375 3.625zM61.03 7.03c-2.437-1.78-5.593-2.593-8.593-2.593-1.688 0-3.406.25-4.938.937l.032-.031c-1.5.625-2.687 1.719-3.312 3.25l-.063.187c-.5 1.281-.468 2.656 0 3.937.5 1.282 1.406 2.344 2.5 3.063l.094.062.093.063c1.532 1 3.282 1.593 5.063 1.843l.031.032c.313.031.625.093.938.093 1.125 0 2.25-.156 3.312-.531-1.75 1.469-4.5 1.75-6.687 1.187-1.375-.343-2.656-1.062-3.656-2.062l-1.375 2.344c.469.437 1 .812 1.562 1.156 2.282 1.312 5.032 1.843 7.625 1.53 2.625-.312 5.031-1.562 6.75-3.593 1.594-1.875 2.375-4.281 2.375-6.782 0-1.343-.25-2.687-.75-3.937l-.031-.094c-.625-1.312-1.656-2.374-2.969-3.062l-.001.001zM60.03 13.343c-.156.438-.375.844-.625 1.219-.937 1.312-2.5 2.031-4.062 2.031-1.625 0-3.157-.687-4.063-2.062-.374-.594-.624-1.25-.687-1.969-.062-.687.032-1.406.313-2.062.562-1.313 1.937-2.188 3.374-2.375.407-.063.813-.063 1.188 0 1.625.219 3.157 1.032 4.062 2.438.5.75.75 1.656.75 2.562 0 .063-.031.125-.031.188-.063.031-.125.031-.219.031z"/>
-          </svg>
-        </div>
+  <!-- Services Section (Restored 4-Card Heroic Layout from Image 2) -->
+  <section class="section services-section" id="services" style="padding-top: 100px;">
+    <div class="container">
+      <h2 class="reveal" style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3.2rem); text-transform: uppercase; line-height: 1.15; margin-bottom: 48px; text-align: center; letter-spacing: -0.01em;">
+        MOTION, EDITING, <span style="color: var(--text-muted);">AI PRODUCTION</span><br>
+        —WE'VE GOT YOU <span style="color: var(--text-muted);">COVERED.</span>
+      </h2>
 
-        <!-- Adobe -->
-        <div class="client-logo" data-hover style="--brand-color: #FF0000;">
-          <svg viewBox="0 0 60 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h23.4L30 17.1 36.6 0H60v60H38.4L30 38.7 21.6 60H0V0zm24 36l6-15.6L36 36h-4.8L30 32.4 28.8 36H24z"/>
-          </svg>
-        </div>
+      <div class="services-cards-wrapper" style="position: relative;">
+        <div class="services-cards" style="display: flex; gap: 24px; overflow-x: auto; padding: 10px 40px 30px 4px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+          
+                              <!-- Card 1 (Vibrant Orange) -->
+          <div class="s-card reveal" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: var(--accent-primary); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(255,81,0,0.25); transition: all 0.4s ease;">
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
+              MOTION<br>EXPLAINER<br>FOR SAAS
+            </h3>
+            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.8); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
+              Cinematic animated explainers that turn complex SaaS products into instant "I need this" moments for your audience.
+            </p>
+          </div>
 
-        <!-- Spotify -->
-        <div class="client-logo" data-hover style="--brand-color: #1DB954;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-          </svg>
-        </div>
+          <!-- Card 2 (Solid White) -->
+          <div class="s-card reveal reveal-delay-1" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: #ffffff; border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(255,255,255,0.1); transition: all 0.4s ease;">
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
+              LONG &amp;<br>SHORT FORM<br>EDITING
+            </h3>
+            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.7); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
+              Precision editing for podcasts, documentaries, short-form reels, and everything in between — on time, every time.
+            </p>
+          </div>
 
-        <!-- Nike -->
-        <div class="client-logo" data-hover style="--brand-color: #F97316;">
-          <svg viewBox="0 0 100 35" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.207 34.394c-3.878 0-7.122-1.56-8.953-4.313-.537-.808-.959-1.71-1.268-2.68L.378 30.752a1.085 1.085 0 01-.36.061c-.399 0-.764-.252-.896-.643a.958.958 0 01.552-1.213L89.876.058a.963.963 0 011.216.552.958.958 0 01-.553 1.213L27.542 19.986c.29 1.884 1.197 3.508 2.671 4.72 2.085 1.715 5.263 2.42 8.69 1.912 3.283-.487 6.685-2.067 9.556-4.452 4.205-3.493 6.815-8.257 7.36-13.43.058-.549.085-1.105.085-1.651C55.904 3.115 52.847 0 49.012 0c-.688 0-1.384.094-2.072.282L21.207 34.394z"/>
-          </svg>
-        </div>
+          <!-- Card 3 (Dark Charcoal) -->
+          <div class="s-card reveal reveal-delay-2" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: #222222; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s ease;">
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
+              YOUTUBE<br>VIDEO<br>EDITING
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
+              Hooks, cuts, B-roll, and pacing optimized for watch time. We edit for the algorithm and your audience.
+            </p>
+          </div>
 
-        <!-- Apple -->
-        <div class="client-logo" data-hover style="--brand-color: #A3AAAE;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </div>
-
-        <!-- YouTube Channel: MKBHD -->
-        <div class="client-logo client-logo--yt" data-hover style="--brand-color: #E53935;">
-          <div class="yt-profile">
-            <span class="yt-avatar">M</span>
-            <div class="yt-info">
-              <span class="yt-name">MKBHD</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <!-- Card 4 (Deep Black with 3D Orange Ring) -->
+          <div class="s-card reveal reveal-delay-3" data-hover style="min-width: 360px; max-width: 420px; flex: 1.3; background: #0a0a0a; border: 1px solid rgba(255,81,0,0.3); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); transition: all 0.4s ease;">
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; position: relative; z-index: 2; font-weight: 900;">
+              AI VIDEO<br>POST<br>PRODUCTION
+            </h3>
+            <div style="position: absolute; right: -30px; top: 40px; width: 200px; height: 200px; opacity: 0.85; z-index: 1; pointer-events: none;">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="50" cy="50" rx="42" ry="26" transform="rotate(-30 50 50)" stroke="url(#orange3dRing)" stroke-width="14" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="orange3dRing" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ff5100"/>
+                    <stop offset="0.6" stop-color="#ff8c00"/>
+                    <stop offset="1" stop-color="#141414"/>
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500; position: relative; z-index: 2; max-width: 78%;">
+              AI-assisted color grading, voice cloning, auto-subtitles, and scene generation — cutting production time in half without cutting quality.
+            </p>
+          </div>
+
+          <!-- Card 5 (Social Media Design) -->
+          <div class="s-card reveal" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: rgba(255,81,0,0.05); border: 1px solid rgba(255,81,0,0.2); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s ease;">
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
+              SOCIAL MEDIA<br>DESIGN &amp;<br>MGMT
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
+              End-to-end social media management. We create premium visual identity, daily content, and motion graphics that dominate the timeline.
+            </p>
           </div>
         </div>
-
-        <!-- Google -->
-        <div class="client-logo" data-hover style="--brand-color: #4285F4;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-        </div>
-
-        <!-- YouTube Channel: Peter McKinnon -->
-        <div class="client-logo client-logo--yt" data-hover style="--brand-color: #FF6F00;">
-          <div class="yt-profile">
-            <span class="yt-avatar">P</span>
-            <div class="yt-info">
-              <span class="yt-name">Peter McKinnon</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <div class="note-body">
+              <h3 class="note-headline">AI-assisted grading, voice cloning, and scene generation cutting production time in half.</h3>
+            </div>
+            <div class="note-footer">
+              <span class="note-date">Future-Proof</span>
+              <div class="note-indicators">
+                <div class="note-indicator"></div>
+                <div class="note-indicator"></div>
+                <div class="note-indicator"></div>
+                <div class="note-indicator active"></div>
+              </div>
             </div>
           </div>
+
         </div>
 
-        <!-- Figma -->
-        <div class="client-logo" data-hover style="--brand-color: #A259FF;">
-          <svg viewBox="0 0 38 57" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/>
-            <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/>
-            <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/>
-            <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/>
-            <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/>
-          </svg>
+        <!-- Custom Orange Scrollbar Progress Bar -->
+        <div style="width: 100%; height: 3px; background: rgba(255,255,255,0.08); border-radius: 3px; margin-top: 16px; position: relative; overflow: hidden;">
+          <div style="height: 100%; width: 50%; background: var(--gradient-hero); border-radius: 3px; box-shadow: 0 0 12px rgba(255,81,0,0.8);"></div>
         </div>
-
-        <!-- YouTube Channel: The Futur -->
-        <div class="client-logo client-logo--yt" data-hover style="--brand-color: #FFD600;">
-          <div class="yt-profile">
-            <span class="yt-avatar">F</span>
-            <div class="yt-info">
-              <span class="yt-name">The Futur</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Samsung -->
-        <div class="client-logo" data-hover style="--brand-color: #1428A0;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.727 11.943c0-.29-.236-.472-.472-.472s-.473.181-.473.472.237.472.473.472.472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm2.69-.8h-.872l.436-.69.436.69zm1.181.8l-1.544-2.416h-.981l-1.545 2.416h.981l.254-.399h1.6l.254.399h.981zm2.836-.8c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm3.4-.745v1.545h-.927v-1.327c0-.363-.199-.545-.472-.545-.273 0-.472.182-.472.545v1.327h-.927v-2.416h.927v.29c.218-.236.509-.363.854-.363.563 0 .927.4 1.018.944zm3.385.745c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326S19.2 12.687 19.2 11.943c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zM3.054 11.143h.472c.29 0 .436.109.436.327 0 .218-.145.327-.436.327h-.472v-.654zm1.672 1.345c.218-.145.363-.4.363-.69 0-.636-.454-1.018-1.199-1.018H2.127v2.416h.927v-.654h.145l.545.654h1.09l-.69-.708h.582zm13.347-.345c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm2.073-.527c-.363-.055-.545-.073-.545-.218s.127-.218.363-.218c.29 0 .545.109.745.29l.472-.545c-.29-.29-.727-.472-1.217-.472-.727 0-1.29.363-1.29.981 0 .654.472.854 1.09.927.364.055.546.073.546.218s-.146.218-.4.218c-.363 0-.654-.127-.872-.363l-.473.563c.327.327.8.527 1.345.527.745 0 1.327-.345 1.327-1 0-.654-.472-.836-1.09-.908z"/>
-          </svg>
-        </div>
-
-        <!-- YouTube Channel: Casey Neistat -->
-        <div class="client-logo client-logo--yt" data-hover style="--brand-color: #FF1744;">
-          <div class="yt-profile">
-            <span class="yt-avatar">C</span>
-            <div class="yt-info">
-              <span class="yt-name">Casey Neistat</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- === DUPLICATE SET for seamless marquee loop === -->
-
-        <!-- Netflix -->
-        <div class="client-logo" style="--brand-color: #E50914;">
-          <svg viewBox="0 0 111 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.625-5.062-.938l6.031-13.874L94.468 0H99.5l3.062 7.874L105.624 0h5.062l-5.624 14.28zM90.47 0c-.782 4.666-1.5 9.312-2.562 13.656C86.971 9 85.971 4.687 84.971 0h-4.5c-.093.312-4.218 14.5-5.187 18.125 1-.25 2.063-.438 3.063-.625.562-2.312 1.156-4.687 1.687-7.031.844 3.469 1.625 6.969 2.375 10.469 1-.188 2-.344 3-.531C87.033 13.937 88.596 7 90.064 0H90.47zM76.905 7.625c-.218 0-.468.062-.718.188-.5.25-.844.687-1.062 1.188-.157.343-.282.718-.375 1.093C73.812 6.437 72 4.187 69.375 4.187c-3.375 0-5.125 3.344-5.53 6.907l-.032.28c-.188 2.344.282 4.938 2.25 6.438.906.687 2.094 1.062 3.312 1.062 2.531 0 4.375-2.062 5.344-4.28.093.686.156 1.374.187 2.093 0 .75-.031 1.5-.124 2.25 1.062-.187 2.093-.406 3.124-.625V0C76.655.812 76.03 4.094 76.905 7.625zM71.374 15.75c-1.844 0-2.438-2-2.438-3.625s.656-3.437 2.438-3.437c1.844 0 2.375 1.812 2.375 3.437s-.531 3.625-2.375 3.625zM61.03 7.03c-2.437-1.78-5.593-2.593-8.593-2.593-1.688 0-3.406.25-4.938.937l.032-.031c-1.5.625-2.687 1.719-3.312 3.25l-.063.187c-.5 1.281-.468 2.656 0 3.937.5 1.282 1.406 2.344 2.5 3.063l.094.062.093.063c1.532 1 3.282 1.593 5.063 1.843l.031.032c.313.031.625.093.938.093 1.125 0 2.25-.156 3.312-.531-1.75 1.469-4.5 1.75-6.687 1.187-1.375-.343-2.656-1.062-3.656-2.062l-1.375 2.344c.469.437 1 .812 1.562 1.156 2.282 1.312 5.032 1.843 7.625 1.53 2.625-.312 5.031-1.562 6.75-3.593 1.594-1.875 2.375-4.281 2.375-6.782 0-1.343-.25-2.687-.75-3.937l-.031-.094c-.625-1.312-1.656-2.374-2.969-3.062l-.001.001zM60.03 13.343c-.156.438-.375.844-.625 1.219-.937 1.312-2.5 2.031-4.062 2.031-1.625 0-3.157-.687-4.063-2.062-.374-.594-.624-1.25-.687-1.969-.062-.687.032-1.406.313-2.062.562-1.313 1.937-2.188 3.374-2.375.407-.063.813-.063 1.188 0 1.625.219 3.157 1.032 4.062 2.438.5.75.75 1.656.75 2.562 0 .063-.031.125-.031.188-.063.031-.125.031-.219.031z"/>
-          </svg>
-        </div>
-
-        <!-- Adobe -->
-        <div class="client-logo" style="--brand-color: #FF0000;">
-          <svg viewBox="0 0 60 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h23.4L30 17.1 36.6 0H60v60H38.4L30 38.7 21.6 60H0V0zm24 36l6-15.6L36 36h-4.8L30 32.4 28.8 36H24z"/>
-          </svg>
-        </div>
-
-        <!-- Spotify -->
-        <div class="client-logo" style="--brand-color: #1DB954;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-          </svg>
-        </div>
-
-        <!-- Nike -->
-        <div class="client-logo" style="--brand-color: #F97316;">
-          <svg viewBox="0 0 100 35" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.207 34.394c-3.878 0-7.122-1.56-8.953-4.313-.537-.808-.959-1.71-1.268-2.68L.378 30.752a1.085 1.085 0 01-.36.061c-.399 0-.764-.252-.896-.643a.958.958 0 01.552-1.213L89.876.058a.963.963 0 011.216.552.958.958 0 01-.553 1.213L27.542 19.986c.29 1.884 1.197 3.508 2.671 4.72 2.085 1.715 5.263 2.42 8.69 1.912 3.283-.487 6.685-2.067 9.556-4.452 4.205-3.493 6.815-8.257 7.36-13.43.058-.549.085-1.105.085-1.651C55.904 3.115 52.847 0 49.012 0c-.688 0-1.384.094-2.072.282L21.207 34.394z"/>
-          </svg>
-        </div>
-
-        <!-- Apple -->
-        <div class="client-logo" style="--brand-color: #A3AAAE;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </div>
-
-        <!-- MKBHD -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #E53935;">
-          <div class="yt-profile">
-            <span class="yt-avatar">M</span>
-            <div class="yt-info">
-              <span class="yt-name">MKBHD</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Google -->
-        <div class="client-logo" style="--brand-color: #4285F4;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-        </div>
-
-        <!-- Peter McKinnon -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FF6F00;">
-          <div class="yt-profile">
-            <span class="yt-avatar">P</span>
-            <div class="yt-info">
-              <span class="yt-name">Peter McKinnon</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Figma -->
-        <div class="client-logo" style="--brand-color: #A259FF;">
-          <svg viewBox="0 0 38 57" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/>
-            <path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/>
-            <path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/>
-            <path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/>
-            <path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/>
-          </svg>
-        </div>
-
-        <!-- The Futur -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FFD600;">
-          <div class="yt-profile">
-            <span class="yt-avatar">F</span>
-            <div class="yt-info">
-              <span class="yt-name">The Futur</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Samsung -->
-        <div class="client-logo" style="--brand-color: #1428A0;">
-          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.727 11.943c0-.29-.236-.472-.472-.472s-.473.181-.473.472.237.472.473.472.472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm2.69-.8h-.872l.436-.69.436.69zm1.181.8l-1.544-2.416h-.981l-1.545 2.416h.981l.254-.399h1.6l.254.399h.981zm2.836-.8c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm3.4-.745v1.545h-.927v-1.327c0-.363-.199-.545-.472-.545-.273 0-.472.182-.472.545v1.327h-.927v-2.416h.927v.29c.218-.236.509-.363.854-.363.563 0 .927.4 1.018.944zm3.385.745c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326S19.2 12.687 19.2 11.943c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zM3.054 11.143h.472c.29 0 .436.109.436.327 0 .218-.145.327-.436.327h-.472v-.654zm1.672 1.345c.218-.145.363-.4.363-.69 0-.636-.454-1.018-1.199-1.018H2.127v2.416h.927v-.654h.145l.545.654h1.09l-.69-.708h.582zm13.347-.345c0-.29-.236-.472-.472-.472-.237 0-.473.181-.473.472s.236.472.473.472c.236 0 .472-.181.472-.472zm.927 0c0 .744-.563 1.326-1.399 1.326s-1.399-.582-1.399-1.326c0-.745.563-1.327 1.4-1.327.835 0 1.398.582 1.398 1.327zm2.073-.527c-.363-.055-.545-.073-.545-.218s.127-.218.363-.218c.29 0 .545.109.745.29l.472-.545c-.29-.29-.727-.472-1.217-.472-.727 0-1.29.363-1.29.981 0 .654.472.854 1.09.927.364.055.546.073.546.218s-.146.218-.4.218c-.363 0-.654-.127-.872-.363l-.473.563c.327.327.8.527 1.345.527.745 0 1.327-.345 1.327-1 0-.654-.472-.836-1.09-.908z"/>
-          </svg>
-        </div>
-
-        <!-- Casey Neistat -->
-        <div class="client-logo client-logo--yt" style="--brand-color: #FF1744;">
-          <div class="yt-profile">
-            <span class="yt-avatar">C</span>
-            <div class="yt-info">
-              <span class="yt-name">Casey Neistat</span>
-              <svg class="yt-verified" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <!-- Storytelling DNA Section -->
+  <section class="section dna-section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="dna-grid">
+        <div class="dna-visual reveal">
+          <img src="assets/images/thumb_hollywood.png" alt="CutFusion Cinematic Production">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: absolute; bottom: 24px; left: 24px; right: 24px; z-index: 2;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-primary); font-weight: 700; margin-bottom: 4px;">Cinematic Storytelling</div>
+            <div style="font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase;">Where Cinema Meets Intelligence</div>
+          </div>
+        </div>
+        <div class="dna-content reveal reveal-delay-1">
+          <span class="section-tag">Our Storytelling DNA</span>
+          <h3>AI CREATES THE CANVAS.<br><span class="italic">HUMAN DIRECTION CREATES EMOTION.</span></h3>
+          <p>We believe technology is only the first layer of modern video production. What separates acceptable videos from campaign signatures is high-end art direction, psychological pacing, and relentless attention to narrative flow.</p>
+          <p>Every frame generated by our neural tools passes through senior editors and colorists to guarantee zero robot artifacts and 100% broadcast-grade quality.</p>
+          <div class="dna-pillars">
+            <div class="dna-pillar" data-hover>
+              <div class="dna-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg></div>
+              <h4>Hook Engineering</h4>
+              <p>Stopping the scroll in &lt;3 seconds</p>
+            </div>
+            <div class="dna-pillar" data-hover>
+              <div class="dna-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+              <h4>Cinema Polish</h4>
+              <p>Rec.709 grade &amp; sound design</p>
+            </div>
+            <div class="dna-pillar" data-hover>
+              <div class="dna-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <h4>Psychology</h4>
+              <p>Calibrated for conversion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- About Section -->
-  <section class="section" id="about">
+  <!-- Process Section -->
+  <section class="section" id="process" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-tag" style="justify-content: center;">Our Process</span>
+        <h2 class="section-title">FROM BRIEF TO <span class="italic">DELIVERY</span></h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 550px; margin: 20px auto 0; line-height: 1.6;">A transparent, structured workflow — 100% remote, deadlines respected, feedback in real-time.</p>
+      </div>
+
+      <div class="process-grid">
+                <div class="bento-note-card reveal" data-hover style="min-height: 350px;">
+          <div class="note-grid-overlay"></div>
+          <div class="note-header">
+            <div class="note-meta">
+              <span class="note-category">01</span>
+              <span class="note-subtext">Brief & Strategy</span>
+            </div>
+            <div class="note-arrow-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div class="note-body">
+            <h3 class="note-headline">Offer audit, marketing angles, copywriting, and hook engineering.</h3>
+          </div>
+          <div class="note-footer">
+            <span class="note-date">Dissecting the brand</span>
+            <div class="note-indicators">
+              <div class="note-indicator active"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-note-card reveal reveal-delay-1" data-hover style="min-height: 350px;">
+          <div class="note-grid-overlay"></div>
+          <div class="note-header">
+            <div class="note-meta">
+              <span class="note-category">02</span>
+              <span class="note-subtext">Mixed Production</span>
+            </div>
+            <div class="note-arrow-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div class="note-body">
+            <h3 class="note-headline">Real footage + AI generation in parallel. Speed without compromise.</h3>
+          </div>
+          <div class="note-footer">
+            <span class="note-date">Seamless harmony</span>
+            <div class="note-indicators">
+              <div class="note-indicator"></div>
+              <div class="note-indicator active"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-note-card reveal reveal-delay-2" data-hover style="min-height: 350px;">
+          <div class="note-grid-overlay"></div>
+          <div class="note-header">
+            <div class="note-meta">
+              <span class="note-category">03</span>
+              <span class="note-subtext">Post-Production</span>
+            </div>
+            <div class="note-arrow-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div class="note-body">
+            <h3 class="note-headline">Cinema color grading, psychological sound design, razor-sharp editing.</h3>
+          </div>
+          <div class="note-footer">
+            <span class="note-date">Polished by seniors</span>
+            <div class="note-indicators">
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator active"></div>
+              <div class="note-indicator"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-note-card reveal reveal-delay-3" data-hover style="min-height: 350px;">
+          <div class="note-grid-overlay"></div>
+          <div class="note-header">
+            <div class="note-meta">
+              <span class="note-category">04</span>
+              <span class="note-subtext">Delivery & Iteration</span>
+            </div>
+            <div class="note-arrow-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </div>
+          <div class="note-body">
+            <h3 class="note-headline">Multi-format exports, A/B variations, data-driven adjustments.</h3>
+          </div>
+          <div class="note-footer">
+            <span class="note-date">Rework guarantee</span>
+            <div class="note-indicators">
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator"></div>
+              <div class="note-indicator active"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Performance Metrics -->
+  <section class="section" id="performance">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-tag" style="justify-content: center;">Performance</span>
+        <h2 class="section-title">THE OBSESSION WITH <span class="italic">MEASURABLE ROI</span></h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 600px; margin: 20px auto 0; line-height: 1.6;">We speak the same language as your Growth and Performance Marketing teams — numbers are our creative compass.</p>
+      </div>
+                  <div class="performance-dashboard reveal" id="performanceDashboard">
+        <div class="perf-copy">
+          <h3 style="font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); margin-bottom: 24px; text-transform: uppercase;">Engineered for <span style="color: var(--accent-primary);">3x ROAS</span></h3>
+          <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">Our campaigns consistently deliver a 3x Return on Ad Spend. We combine AI-driven asset generation with rigorous A/B testing to identify winning creatives before burning through your budget.</p>
+          <ul style="list-style: none; padding: 0; margin: 0; color: rgba(255,255,255,0.9); font-weight: 500;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced hook engineering</li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Data-backed thumb-stop optimization</li>
+            <li style="display: flex; align-items: center; gap: 12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Rapid iteration & multivariate testing</li>
+          </ul>
+        </div>
+        <div class="chart-widget-wide">
+          <div class="chart-header">
+            <div class="chart-toggles">
+              <button>1H</button>
+              <button>1D</button>
+              <button>1W</button>
+              <button>1M</button>
+              <button class="active">ALL</button>
+            </div>
+          </div>
+          <div class="chart-info">
+            <div class="chart-value">.2M / 6months</div>
+            <div class="chart-change">+34.5%</div>
+          </div>
+          <div class="chart-graph-container">
+            <svg class="chart-grid-svg" viewBox="0 0 800 250" preserveAspectRatio="none">
+              <line x1="100" y1="0" x2="100" y2="250" stroke="rgba(255,255,255,0.03)" />
+              <line x1="250" y1="0" x2="250" y2="250" stroke="rgba(255,255,255,0.03)" />
+              <line x1="400" y1="0" x2="400" y2="250" stroke="rgba(255,255,255,0.03)" />
+              <line x1="550" y1="0" x2="550" y2="250" stroke="rgba(255,255,255,0.03)" />
+              <line x1="700" y1="0" x2="700" y2="250" stroke="rgba(255,255,255,0.03)" />
+            </svg>
+            <svg class="chart-lines-svg" viewBox="0 0 800 250" preserveAspectRatio="none">
+              <path class="chart-line-bg" d="M 0 220 C 50 200, 100 150, 150 180 C 200 210, 250 120, 300 140 C 350 160, 400 100, 450 130 C 500 160, 550 180, 600 140 C 650 100, 700 170, 750 150 C 780 140, 790 120, 800 130" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="chart-line-active" id="scrollChartPath" d="M 0 200 C 60 180, 80 100, 140 120 C 200 140, 220 80, 280 90 C 340 100, 380 200, 440 180 C 500 160, 520 60, 580 80 C 640 100, 680 140, 740 100 C 780 70, 790 50, 800 40" fill="none" stroke="#ff5100" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Works / Portfolio -->
+  <section class="section" id="work" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-tag">About Us</p>
-        <h2 class="section-title">The studio<br>behind the <span class="italic">craft</span></h2>
+        <span class="section-tag">Selected Work</span>
+        <h2 class="section-title">PROJECTS THAT <span class="italic">PERFORM</span></h2>
       </div>
-      <div class="about-grid">
-        <div class="about-text reveal-left">
-          <h3>We believe great design doesn't just look beautiful — it <span class="italic">cuts through</span> the noise.</h3>
-          <p>
-            CutFusion Studio is a collective of senior motion designers, art directors, and visual strategists 
-            with 12+ years of combined expertise. We partner with world-class brands, agencies, and forward-thinking startups.
-          </p>
-          <p>
-            Based in New York with a global reach, our studio blends storytelling with surgical precision — 
-            choreographing title sequences, sculpting 3D brand worlds, and crafting visuals that stop people cold.
-          </p>
-          <p>
-            Our arsenal: After Effects, Cinema 4D, Figma, Blender, and the full Adobe suite. But beyond tools, 
-            we bring a relentless understanding of timing, rhythm, and emotional impact to every single frame.
-          </p>
-          <div class="about-stats">
-            <div class="stat reveal reveal-delay-1">
-              <div class="stat-number" data-count="12">0</div>
-              <div class="stat-label">Years Exp.</div>
-            </div>
-            <div class="stat reveal reveal-delay-2">
-              <div class="stat-number" data-count="180">0</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat reveal reveal-delay-3">
-              <div class="stat-number" data-count="35">0</div>
-              <div class="stat-label">Awards</div>
-            </div>
+
+      <div class="bento-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 360px 280px; gap: 16px;">
+        
+        <!-- Tile 1 -->
+        <div class="bento-tile reveal" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="SaaS Product Explainer" data-tag="Motion Design" data-desc="A dynamic 60-second explainer that simplified complex onboarding flows into an engaging visual narrative, boosting trial signups by 40%.">
+          <div class="bento-thumb"><img src="assets/images/thumb_saas.png" alt="SaaS Product Explainer"></div>
+          <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Motion Design</span>
+            <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">SaaS Product Explainer</h3>
+            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Dynamic 60s explainer — boosting trial signups by 40%.</p>
           </div>
         </div>
-        <div class="skills-grid reveal-right">
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">Motion Design / After Effects</span>
-              <span class="skill-percent">97%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="97"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">3D / Cinema 4D / Blender</span>
-              <span class="skill-percent">92%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="92"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">Brand & Visual Identity</span>
-              <span class="skill-percent">95%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="95"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">Typography & Layout</span>
-              <span class="skill-percent">93%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="93"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">Illustration & Concept Art</span>
-              <span class="skill-percent">85%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="85"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">UI/UX & Interaction Design</span>
-              <span class="skill-percent">88%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="88"></div>
-            </div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-header">
-              <span class="skill-name">Art Direction & Strategy</span>
-              <span class="skill-percent">94%</span>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill" data-width="94"></div>
-            </div>
+
+        <!-- Tile 2 -->
+        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="AI Fashion Campaign" data-tag="AI Generative" data-desc="Fully AI-generated fashion lookbook video with virtual environments — delivered in 5 days.">
+          <div class="bento-thumb"><img src="assets/images/thumb_fashion.png" alt="AI Fashion Campaign"></div>
+          <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">AI Generative</span>
+            <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">AI Fashion Campaign</h3>
           </div>
         </div>
+
+        <!-- Tile 3 -->
+        <div class="bento-tile reveal" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="E-Commerce Ad Series" data-tag="Short Form" data-desc="15-second thumb-stopping ads for Meta and TikTok — 45% TSR and 3x ROAS.">
+          <div class="bento-thumb"><img src="assets/images/thumb_ecommerce.png" alt="E-Commerce Ad Series"></div>
+          <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Short Form</span>
+            <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">E-Commerce Ad Series</h3>
+          </div>
+        </div>
+
+        <!-- Tile 4 -->
+        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="Hybrid Hollywood Spot" data-tag="VFX + AI Cinema" data-desc="Cinematic brand film fusing real footage with AI environments — 4K broadcast ready.">
+          <div class="bento-thumb"><img src="assets/images/thumb_hollywood.png" alt="Hybrid Hollywood Spot"></div>
+          <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">VFX + AI Cinema</span>
+            <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">Hybrid Hollywood Spot</h3>
+          </div>
+        </div>
+
+        <!-- Tile 5 -->
+        <div class="bento-tile reveal reveal-delay-2" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="YouTube Channel Growth" data-tag="Content Strategy" data-desc="Complete YouTube overhaul — 2K to 50K subscribers in 6 months.">
+          <div class="bento-thumb"><img src="assets/images/thumb_youtube.png" alt="YouTube Channel Growth"></div>
+          <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+          <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Content Strategy</span>
+            <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">YouTube Channel Growth</h3>
+            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Complete YouTube overhaul — SEO, thumbnails, retention editing — 2K to 50K subscribers in 6 months.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;" class="reveal">
+        <a href="portfolio.html" class="btn-primary magnetic" data-hover style="text-decoration: none;">
+          View All Projects
+          <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <!-- Services Section -->
-  <section class="section" id="services">
+  <!-- Target Markets -->
+  <section class="section" id="markets">
     <div class="container">
-      <div class="section-header reveal">
-        <p class="section-tag">What We Do</p>
-        <h2 class="section-title">Services built for<br><span class="italic">bold brands</span></h2>
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-tag" style="justify-content: center;">Industries</span>
+        <h2 class="section-title">SECTORS WHERE WE <span class="italic">EXCEL</span></h2>
       </div>
-      <div class="services-grid">
-        <div class="service-card reveal reveal-delay-1" id="service-1">
-          <span class="service-number">01</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="23 7 16 12 23 17 23 7"></polygon>
-              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-            </svg>
-          </div>
-          <h3>Motion Design</h3>
-          <p>From explainer videos to title sequences and social media motion content — we bring static ideas to kinetic life.</p>
+      <div class="markets-grid">
+        <div class="market-card reveal" data-hover>
+          <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+          <h3>E-Commerce & D2C</h3>
+          <p>Product videos, UGC premium, and Meta ad campaigns for direct-to-consumer brands.</p>
         </div>
-        <div class="service-card reveal reveal-delay-2" id="service-2">
-          <span class="service-number">02</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
-            </svg>
-          </div>
-          <h3>Brand Identity</h3>
-          <p>Comprehensive visual identity systems — logos, color palettes, typography, guidelines — that define how your brand is seen.</p>
+        <div class="market-card reveal reveal-delay-1" data-hover>
+          <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Tech & SaaS</h3>
+          <p>Motion explainers, product demos, and conversion-optimized VSLs for startups and fintech.</p>
         </div>
-        <div class="service-card reveal reveal-delay-3" id="service-3">
-          <span class="service-number">03</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-tertiary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 12l2 2 4-4"></path>
-            </svg>
-          </div>
-          <h3>3D & Visual Effects</h3>
-          <p>Photorealistic renders, abstract art, product visualization — pushing the boundaries of what's digitally possible.</p>
+        <div class="market-card reveal reveal-delay-2" data-hover>
+          <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Fashion & Luxury</h3>
+          <p>High-end aesthetic, campaign imagery, and video lookbooks for fashion houses and creators.</p>
         </div>
-        <div class="service-card reveal reveal-delay-1" id="service-4">
-          <span class="service-number">04</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-          </div>
-          <h3>Editorial & Print</h3>
-          <p>Magazine layouts, posters, packaging design — meticulous typographic craft for tangible and digital publications.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-2" id="service-5">
-          <span class="service-number">05</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </div>
-          <h3>UI/UX Design</h3>
-          <p>Interaction-rich interfaces and prototypes that feel as good as they look. Design systems built for scale.</p>
-        </div>
-        <div class="service-card reveal reveal-delay-3" id="service-6">
-          <span class="service-number">06</span>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"></path>
-            </svg>
-          </div>
-          <h3>Creative Direction</h3>
-          <p>Strategic creative vision from concept to launch. We guide teams and projects to deliver cohesive, impactful creative.</p>
+        <div class="market-card reveal reveal-delay-3" data-hover>
+          <div class="market-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>Tourism & Hospitality</h3>
+          <p>Selling the dream with absolute visual refinement — hotels, travel agencies, destinations.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <!-- Creative Tech Stack Showcase -->
+  <section class="section" id="techstack" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-tag" style="justify-content: center;">Pipeline &amp; Stack</span>
+        <h2 class="section-title">POWERED BY <span class="italic">NEXT-GEN TECH</span></h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 550px; margin: 20px auto 0; line-height: 1.6;">We combine cinema-grade hardware with cutting-edge neural models &amp; motion software.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card reveal" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <h4>RED &amp; Sony FX</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">4K/8K Cinema Shooting</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-1" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <h4>After Effects</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">2D/3D Motion Design</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-2" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+          <h4>Cinema 4D</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Octane / Redshift 3D</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-3" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          <h4>Runway Gen-3</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">AI Video Generation</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-4" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+          <h4>Midjourney v6</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Visual Art Direction</p>
+        </div>
+        <div class="tech-card reveal reveal-delay-5" data-hover>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h4>DaVinci Resolve</h4>
+          <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Rec.709 Color Grading</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Testimonials -->
-  <section class="section" id="testimonials">
+  <section class="section" id="testimonials" style="background: var(--bg-secondary);">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-tag">Client Praise</p>
-        <h2 class="section-title">Kind words from<br><span class="italic">amazing people</span></h2>
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">WHAT CLIENTS <span class="italic">SAY</span></h2>
       </div>
       <div class="testimonials-track">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"CutFusion transformed our entire brand presence. The motion identity they created didn't just look incredible — it communicated our story in ways static design never could."</p>
+        <div class="testimonial-card" data-hover>
+          <div class="testimonial-quote">"CutFusion delivered our entire ad creative suite in under two weeks. Quality indistinguishable from agencies charging 5× more. Our ROAS tripled on Meta within the first month."</div>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">SH</div>
-            <div>
-              <div class="testimonial-name">Sarah Hoffman</div>
-              <div class="testimonial-role">CMO, NovaTech Industries</div>
-            </div>
+            <div class="testimonial-avatar">A</div>
+            <div><div class="testimonial-name">Alex Durand</div><div class="testimonial-role">CMO, E-Commerce Brand</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"Working with the CutFusion team is like having a creative force of nature on retainer. Their eye for detail, understanding of motion, and storytelling ability is unmatched."</p>
+        <div class="testimonial-card" data-hover>
+          <div class="testimonial-quote">"Their AI-powered production is a game-changer. We got 12 ad variations in the time it takes to produce one. The team understands performance marketing inside out."</div>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">MK</div>
-            <div>
-              <div class="testimonial-name">Marcus Kim</div>
-              <div class="testimonial-role">Creative Director, Ogilvy NY</div>
-            </div>
+            <div class="testimonial-avatar">S</div>
+            <div><div class="testimonial-name">Sophie Martin</div><div class="testimonial-role">Growth Lead, SaaS Startup</div></div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"The rebrand CutFusion delivered exceeded every expectation. The level of craft in both the visual identity and the animated brand film was genuinely world-class."</p>
+        <div class="testimonial-card" data-hover>
+          <div class="testimonial-quote">"The hybrid Hollywood spot was absolutely cinematic. Real footage blended with AI environments — our competitors couldn't believe the production value at that price."</div>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">ER</div>
-            <div>
-              <div class="testimonial-name">Elena Rodriguez</div>
-              <div class="testimonial-role">Founder & CEO, Lumina Studio</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">"CutFusion brought a cinematic quality to our product launch that none of us thought was possible. Their motion design literally stopped people mid-scroll. The numbers spoke for themselves."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JW</div>
-            <div>
-              <div class="testimonial-name">James Wright</div>
-              <div class="testimonial-role">VP Marketing, Meridian Health</div>
-            </div>
+            <div class="testimonial-avatar">M</div>
+            <div><div class="testimonial-name">Marc Lefebvre</div><div class="testimonial-role">Brand Director, Luxury Fashion</div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <!-- FAQ & Client Trust Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-tag" style="justify-content: center;">Client Trust &amp; FAQs</span>
+        <h2 class="section-title">FREQUENTLY ASKED <span class="italic">QUESTIONS</span></h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 550px; margin: 20px auto 0; line-height: 1.6;">Everything you need to know about working with CutFusion Studio.</p>
+      </div>
+
+      <div class="trust-badges reveal">
+        <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Rights Transferred</div>
+        <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Bilateral NDA Included</div>
+        <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> GDPR Compliant</div>
+        <div class="trust-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg> Rework Guarantee</div>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does working with CutFusion compare to a local European agency?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            You get the exact same senior art direction and broadcast quality as a top Paris or London studio, but at 40%â€“60% lower cost. Communication is 100% fluent in French and English, with direct access via Slack, Notion, and Miro.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is your typical project turnaround time?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            Most projects are delivered within 5 to 14 business days. For AI ad creative iterations, express 48â€“72h turnarounds are available to react to viral trends before your competitors.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How are IP rights, NDAs, and confidentiality handled?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            100% of IP rights are exclusively assigned to your company upon final delivery for unlimited commercial use across Web, TV, and DOOH. A bilateral NDA is signed prior to receiving your brief, and your data is never used to train public AI models.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if I need revisions on the initial delivery?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            Every project includes our Rework Guarantee and structured revision rounds. We iterate on pacing, color grading, copy, and visual hooks until you are 100% thrilled with the final result.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 30-Min Call Section -->
+  <section class="section" id="call-cta" style="padding-bottom: 0;">
+    <div class="container">
+                      <div class="call-cta-section reveal">
+          <!-- Floating Memojis -->
+          <img src="assets/images/client_emoji_1.png" style="position: absolute; top: -10%; left: 5%; width: 120px; height: auto; z-index: 1; animation: floatMemoji 7s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+          <img src="assets/images/client_emoji_2.png" style="position: absolute; bottom: 5%; left: 15%; width: 150px; height: auto; z-index: 1; animation: floatMemoji2 9s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+          <img src="assets/images/client_emoji_3.png" style="position: absolute; top: 10%; right: 10%; width: 130px; height: auto; z-index: 1; animation: floatMemoji3 8s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+          <img src="assets/images/client_emoji_1.png" style="position: absolute; bottom: -10%; right: 25%; width: 160px; height: auto; z-index: 1; animation: floatMemoji 10s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transform: scaleX(-1);" alt="Memoji">
+          
+                <a href="#contact" class="call-avatar-pill glass-pill-cta magnetic" data-hover>Better call us</a>
+        <h2 class="call-headline" style="font-family: 'Inter', system-ui, sans-serif; letter-spacing: -0.06em; text-transform: none; line-height: 0.85; font-weight: 800;"><span style="background: linear-gradient(180deg, #ffffff 0%, #ffcda8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let's have a<br>30-min call</span></h2>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section class="section" id="contact">
     <div class="container">
-      <div class="section-header reveal">
-        <p class="section-tag">Get In Touch</p>
-        <h2 class="section-title">Let's create<br>something <span class="italic">remarkable</span></h2>
-      </div>
       <div class="contact-wrapper">
-        <div class="contact-info reveal-left">
-          <h3>Have a project in mind? Let's make it <span class="italic">unforgettable</span>.</h3>
-          <p>We're always open to bold collaborations and ambitious projects. Whether you need a motion piece, a full brand overhaul, or creative direction — let's talk.</p>
+        <div class="contact-info reveal">
+          <h3>LET'S TALK ABOUT YOUR <span class="italic">NEXT CAMPAIGN</span></h3>
+          <p>Discover how CutFusion can produce your video assets with unmatched premium quality — remotely, on your timeline. Free quote, response within 24h.</p>
           <div class="contact-details">
             <div class="contact-detail" data-hover>
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-detail-label">Email</div>
-                <div class="contact-detail-text">hello@cutfusion.studio</div>
-              </div>
+              <div class="contact-detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><div class="contact-detail-label">Email</div><div class="contact-detail-text">contact@cutfusion.com</div></div>
             </div>
             <div class="contact-detail" data-hover>
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-detail-label">Location</div>
-                <div class="contact-detail-text">New York, NY — Available Worldwide</div>
-              </div>
-            </div>
-            <div class="contact-detail" data-hover>
-              <div class="contact-detail-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-detail-label">Availability</div>
-                <div class="contact-detail-text">Accepting new projects — Q3 2026</div>
-              </div>
+              <div class="contact-detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><div class="contact-detail-label">Phone</div><div class="contact-detail-text">+216 58 829 798</div></div>
             </div>
           </div>
         </div>
         <form class="contact-form reveal-right" id="contactForm">
           <div class="form-row">
-            <div class="form-group">
-              <input type="text" id="contactName" placeholder="Your Name" required data-hover>
-            </div>
-            <div class="form-group">
-              <input type="email" id="contactEmail" placeholder="Your Email" required data-hover>
-            </div>
+            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required id="contactName"></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required id="contactEmail"></div>
           </div>
-          <div class="form-group">
-            <input type="text" id="contactSubject" placeholder="Subject" data-hover>
-          </div>
-          <div class="form-group">
-            <textarea id="contactMessage" placeholder="Tell us about your project..." required data-hover></textarea>
-          </div>
+          <div class="form-group"><input type="text" name="subject" placeholder="Project Type (e.g. Motion Explainer, AI Promo)" id="contactSubject"></div>
+          <div class="form-group"><textarea name="message" placeholder="Tell us about your project..." rows="5" id="contactMessage"></textarea></div>
           <button type="submit" class="btn-submit magnetic" data-hover id="submitBtn">
             Send Message
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
         </form>
       </div>
@@ -1022,63 +729,38 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer" id="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <a href="#" class="footer-logo magnetic" data-hover style="display: inline-block; text-decoration: none;">
-          <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 128px; width: auto; object-fit: contain;">
+          <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 120px; width: auto; object-fit: contain;">
         </a>
         <div class="footer-socials">
-          <a href="#" class="social-link magnetic" data-hover aria-label="Dribbble">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073a42.153 42.153 0 00-.767-1.68c2.31-1 4.165-2.358 5.548-4.082a9.863 9.863 0 012.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68a46.287 46.287 0 00-3.62-5.293A9.862 9.862 0 0112 2.087c2.2 0 4.233.715 5.886 1.928l.157.144zM7.53 3.166a44.59 44.59 0 013.624 5.253c-2.56.716-5.46 1.073-8.686 1.073-.392 0-.752-.007-1.08-.021a9.899 9.899 0 016.142-6.305zM2.087 12c0-.077.003-.152.005-.228.399.018.826.027 1.285.027 3.516 0 6.72-.413 9.594-1.238.209.422.414.849.612 1.28-3.385 1.033-5.989 3.131-7.837 6.305A9.864 9.864 0 012.087 12zm5.198 7.58c1.675-2.95 4.037-4.87 7.103-5.761.573 1.546 1.058 3.176 1.46 4.89A9.843 9.843 0 0112 21.913a9.85 9.85 0 01-4.715-2.333zm10.078 1.18a37.728 37.728 0 00-1.383-4.577c1.88-.264 3.93-.201 6.15.19a9.889 9.889 0 01-4.767 4.387z"/></svg>
-          </a>
-          <a href="#" class="social-link magnetic" data-hover aria-label="Behance">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7.803 5.731c.589 0 1.119.051 1.605.155.483.103.895.273 1.243.508.343.235.611.547.804.939.187.387.281.871.281 1.443 0 .619-.141 1.137-.421 1.551-.283.414-.7.753-1.256 1.015.757.219 1.318.602 1.69 1.146.374.549.557 1.206.557 1.975 0 .623-.119 1.161-.358 1.613-.24.453-.57.824-.99 1.114a4.393 4.393 0 01-1.42.649 6.053 6.053 0 01-1.615.213H1.98V5.731h5.823zm-.351 4.972c.48 0 .878-.114 1.192-.345.312-.228.463-.604.463-1.119 0-.286-.051-.522-.151-.707a1.114 1.114 0 00-.417-.428 1.683 1.683 0 00-.597-.214 3.169 3.169 0 00-.687-.071H4.71v2.884h2.742zm.151 5.239c.267 0 .521-.025.76-.077.241-.052.455-.137.637-.261a1.41 1.41 0 00.449-.477c.114-.2.168-.459.168-.779 0-.632-.18-1.07-.543-1.315-.363-.244-.826-.368-1.388-.368H4.71v3.277h2.893zM16.229 16.079c.391.382.921.573 1.591.573.479 0 .895-.122 1.252-.368.357-.245.574-.529.649-.851h2.147c-.345 1.072-.87 1.838-1.573 2.303-.707.465-1.559.697-2.56.697-.692 0-1.315-.114-1.869-.341a4.022 4.022 0 01-1.421-1.003 4.497 4.497 0 01-.897-1.555c-.21-.601-.318-1.268-.318-1.999 0-.707.108-1.365.318-1.975.213-.61.523-1.14.933-1.586.41-.449.904-.8 1.479-1.055.571-.258 1.215-.387 1.929-.387.787 0 1.475.161 2.06.479.587.32 1.073.755 1.459 1.305.387.549.67 1.182.843 1.895.176.714.236 1.473.181 2.277h-6.403c.03.81.257 1.508.648 1.891zm2.792-4.789c-.307-.33-.784-.499-1.38-.499-.388 0-.713.068-.978.207-.265.137-.477.31-.635.519a1.93 1.93 0 00-.321.579c-.065.203-.105.39-.113.559h3.939c-.072-.632-.309-1.139-.512-1.365zM15.576 7.014h4.97v1.175h-4.97V7.014z"/></svg>
-          </a>
-          <a href="#" class="social-link magnetic" data-hover aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="#" class="social-link magnetic" data-hover aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a>
-          <a href="#" class="social-link magnetic" data-hover aria-label="Vimeo">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197a315.065 315.065 0 003.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.48 4.807z"/></svg>
-          </a>
+          <a href="#" class="social-link magnetic" data-hover aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link magnetic" data-hover aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          <a href="#" class="social-link magnetic" data-hover aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 CutFusion Studio. All rights reserved.</p>
-        <p>Designed with precision. Built with passion.</p>
+        <span>&copy; 2025 CutFusion Studio&trade; — All rights reserved.</span>
+        <span><a href="#">Privacy</a> Â· <a href="#">Terms</a></span>
       </div>
     </div>
   </footer>
 
-  <!-- Project Modal Template -->
+  <!-- Project Modal -->
   <div class="project-modal-overlay" id="projectModal">
     <div class="project-modal">
-      <button class="project-modal-close" aria-label="Close modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-      <div class="project-modal-video">
-        <iframe width="100%" height="100%" src="" title="Project Video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
+      <button class="project-modal-close" aria-label="Close modal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="project-modal-video"><iframe width="100%" height="100%" src="" title="Project Video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
       <div class="project-modal-content">
         <span class="project-modal-tag">Category</span>
         <h2 class="project-modal-title">Project Title</h2>
-        <p class="project-modal-desc">Project description goes here.</p>
+        <p class="project-modal-desc">Project description.</p>
         <div class="project-modal-details">
-          <div class="pm-detail">
-            <h4>Client</h4>
-            <p class="pm-client">Client Name</p>
-          </div>
-          <div class="pm-detail">
-            <h4>Tools</h4>
-            <p class="pm-tools">After Effects, Premiere</p>
-          </div>
-          <div class="pm-detail">
-            <h4>Duration</h4>
-            <p class="pm-duration">2 Weeks</p>
-          </div>
+          <div class="pm-detail"><h4>Client</h4><p class="pm-client">Client Name</p></div>
+          <div class="pm-detail"><h4>Tools</h4><p class="pm-tools">After Effects, Premiere</p></div>
+          <div class="pm-detail"><h4>Duration</h4><p class="pm-duration">2 Weeks</p></div>
         </div>
       </div>
     </div>
@@ -1087,3 +769,19 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
