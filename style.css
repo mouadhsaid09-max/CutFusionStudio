@@ -2303,9 +2303,7 @@ ul, ol { list-style: none; }
 
 .magnetic { transition: transform 0.3s var(--ease-out-expo); }
 
-.hero-animate {
-  opacity: 0; transform: translateY(30px);
-}
+
 .hero-highlight {
   background: linear-gradient(135deg, #ff5100, #ff8c00, #ff5100);
   background-size: 200% 200%;
@@ -2486,10 +2484,7 @@ ul, ol { list-style: none; }
 
 .magnetic { transition: transform 0.3s var(--ease-out-expo); }
 
-.hero-animate {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-}
+
 .hero-animate.visible { opacity: 1; transform: translateY(0); }
 .hero-animate:nth-child(2) { transition-delay: 0.15s; }
 .hero-animate:nth-child(3) { transition-delay: 0.3s; }
@@ -3327,15 +3322,7 @@ ul, ol { list-style: none; }
   .hero > .container {
     padding-top: 80px !important;
   }
-  .hero-animate {
-    padding: 8px 16px !important;
-    font-size: 0.75rem !important;
-    width: 100% !important;
-    max-width: 90vw !important;
-    box-sizing: border-box !important;
-    white-space: normal !important;
-    text-align: center !important;
-  }
+  
   h1 {
     font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
     margin-top: 5vh !important;
@@ -3444,14 +3431,7 @@ ul, ol { list-style: none; }
   h2.reveal, .reveal h2 {
     font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
   }
-  .hero-animate, .capability-badges {
-    width: 100% !important;
-    white-space: normal !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    padding: 10px !important;
-    border-radius: 12px !important;
-  }
+  .capability-badges { width: 100% !important; white-space: normal !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px !important; border-radius: 12px !important; }
   .capability-badge {
     font-size: 0.7rem !important;
   }
@@ -3509,9 +3489,7 @@ ul, ol { list-style: none; }
 
 /* EXTRA SAFEGUARDS FOR MOBILE */
 @media (max-width: 768px) {
-  .hero-animate {
-    word-break: break-word !important;
-  }
+  
   .clients-marquee-wrapper {
     overflow: hidden !important;
     width: 100vw !important;
@@ -3526,3 +3504,4 @@ ul, ol { list-style: none; }
     overflow: hidden !important;
   }
 }
+
