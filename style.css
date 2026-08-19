@@ -2020,3 +2020,122 @@ main {
 .client-logo:hover .yt-verified {
   color: var(--brand-color);
 }
+
+/* ── Project Modal ── */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out-expo);
+  padding: 20px;
+}
+
+.project-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.project-modal-overlay.active .project-modal {
+  transform: translateY(0) scale(1);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.project-modal-close:hover {
+  background: var(--accent-primary);
+}
+
+.project-modal-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.project-modal-content {
+  padding: 40px;
+}
+
+.project-modal-tag {
+  color: var(--accent-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.project-modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.project-modal-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 700px;
+}
+
+.project-modal-details {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pm-detail h4 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.pm-detail p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}

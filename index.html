@@ -34,7 +34,7 @@
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
       <!-- Logo -->
       <a href="#" class="nav-logo magnetic" data-hover style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-        <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 64px; width: auto; object-fit: contain;">
+        <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 96px; width: auto; object-fit: contain;">
       </a>
       
       <!-- CTA -->
@@ -106,12 +106,10 @@
         We blend cinematic motion design with razor-sharp editing to produce videos your audience can't scroll past. From SaaS product explainers to long-form YouTube — we make every frame count.
       </p>
 
-      <div class="video-placeholder magnetic" data-hover style="width: 100%; max-width: 900px; aspect-ratio: 16/9; background: #333; margin: 0 auto 40px; border-radius: 12px; position: relative; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.4s ease;">
-        <div class="play-button" style="width: 64px; height: 64px; background: var(--accent-primary); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 10px 30px rgba(255, 81, 0, 0.4);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" style="margin-left: 4px;">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </div>
+      <!-- VSL Video Embed (Replace src with your YouTube or Vimeo link) -->
+      <div class="vsl-wrapper" style="width: 100%; max-width: 900px; aspect-ratio: 16/9; margin: 0 auto 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); position: relative; background: #111;">
+        <!-- Example: https://www.youtube.com/embed/YOUR_VIDEO_ID -->
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?rel=0&showinfo=0" title="CutFusion Studio VSL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
       </div>
 
       <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: inline-flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 8px 16px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 auto;">
@@ -1028,7 +1026,7 @@
     <div class="container">
       <div class="footer-content">
         <a href="#" class="footer-logo magnetic" data-hover style="display: inline-block; text-decoration: none;">
-          <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 96px; width: auto; object-fit: contain;">
+          <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 128px; width: auto; object-fit: contain;">
         </a>
         <div class="footer-socials">
           <a href="#" class="social-link magnetic" data-hover aria-label="Dribbble">
@@ -1054,6 +1052,37 @@
       </div>
     </div>
   </footer>
+
+  <!-- Project Modal Template -->
+  <div class="project-modal-overlay" id="projectModal">
+    <div class="project-modal">
+      <button class="project-modal-close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="project-modal-video">
+        <iframe width="100%" height="100%" src="" title="Project Video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="project-modal-content">
+        <span class="project-modal-tag">Category</span>
+        <h2 class="project-modal-title">Project Title</h2>
+        <p class="project-modal-desc">Project description goes here.</p>
+        <div class="project-modal-details">
+          <div class="pm-detail">
+            <h4>Client</h4>
+            <p class="pm-client">Client Name</p>
+          </div>
+          <div class="pm-detail">
+            <h4>Tools</h4>
+            <p class="pm-tools">After Effects, Premiere</p>
+          </div>
+          <div class="pm-detail">
+            <h4>Duration</h4>
+            <p class="pm-duration">2 Weeks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

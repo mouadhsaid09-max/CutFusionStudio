@@ -739,3 +739,87 @@ document.addEventListener('DOMContentLoaded', () => {
   init();
 })();
 
+/* ── Project Modal Logic ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const modalOverlay = document.getElementById('projectModal');
+  if (!modalOverlay) return;
+
+  const closeBtn = modalOverlay.querySelector('.project-modal-close');
+  const iframe = modalOverlay.querySelector('iframe');
+  
+  // Elements to update
+  const tagEl = modalOverlay.querySelector('.project-modal-tag');
+  const titleEl = modalOverlay.querySelector('.project-modal-title');
+  const descEl = modalOverlay.querySelector('.project-modal-desc');
+  const clientEl = modalOverlay.querySelector('.pm-client');
+  const toolsEl = modalOverlay.querySelector('.pm-tools');
+  const durationEl = modalOverlay.querySelector('.pm-duration');
+
+  const openModal = (data) => {
+    // Update content
+    if (data.tag) tagEl.textContent = data.tag;
+    if (data.title) titleEl.textContent = data.title;
+    if (data.desc) descEl.textContent = data.desc;
+    if (data.client) clientEl.textContent = data.client;
+    if (data.tools) toolsEl.textContent = data.tools;
+    if (data.duration) durationEl.textContent = data.duration;
+    
+    // Set video src
+    if (data.video) {
+      iframe.src = data.video;
+    }
+
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Stop video
+    iframe.src = iframe.src;
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  // Attach to portfolio cards
+  // Note: bento-link and portfolio-card-link
+  const links = document.querySelectorAll('.bento-link, .portfolio-card-link, .bento-tile');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Get parent container for data extraction if needed, 
+      // or we can just open the template with placeholder data
+      const container = link.closest('.bento-tile') || link.closest('.portfolio-card');
+      let title = "Project Title";
+      let tag = "Category";
+      let desc = "Description goes here.";
+      
+      if (container) {
+        const titleNode = container.querySelector('.bento-title, .portfolio-card-title');
+        const tagNode = container.querySelector('.bento-tag, .portfolio-card-tag');
+        const descNode = container.querySelector('.bento-desc, .portfolio-card-desc');
+        
+        if (titleNode) title = titleNode.textContent;
+        if (tagNode) tag = tagNode.textContent;
+        if (descNode) desc = descNode.textContent;
+      }
+
+      openModal({
+        tag: tag,
+        title: title,
+        desc: desc,
+        client: "Client Name",
+        tools: "After Effects, Premiere Pro",
+        duration: "3 Weeks",
+        video: "https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?rel=0"
+      });
+    });
+  });
+});
+
+

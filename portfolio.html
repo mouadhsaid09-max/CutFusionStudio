@@ -162,6 +162,10 @@
 </head>
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <!-- Nav -->
   <nav class="nav" id="navbar">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
@@ -170,7 +174,7 @@
         Back to Home
       </a>
       <a href="index.html" class="nav-logo magnetic" data-hover style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-        <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 64px; width: auto; object-fit: contain;">
+        <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 96px; width: auto; object-fit: contain;">
       </a>
       <a href="index.html#contact" style="display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #ff5100, #ff8c00); padding: 8px 16px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
         GET A QUOTE
@@ -324,6 +328,37 @@
     </div>
   </section>
 
+  <!-- Project Modal Template -->
+  <div class="project-modal-overlay" id="projectModal">
+    <div class="project-modal">
+      <button class="project-modal-close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="project-modal-video">
+        <iframe width="100%" height="100%" src="" title="Project Video" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="project-modal-content">
+        <span class="project-modal-tag">Category</span>
+        <h2 class="project-modal-title">Project Title</h2>
+        <p class="project-modal-desc">Project description goes here.</p>
+        <div class="project-modal-details">
+          <div class="pm-detail">
+            <h4>Client</h4>
+            <p class="pm-client">Client Name</p>
+          </div>
+          <div class="pm-detail">
+            <h4>Tools</h4>
+            <p class="pm-tools">After Effects, Premiere</p>
+          </div>
+          <div class="pm-detail">
+            <h4>Duration</h4>
+            <p class="pm-duration">2 Weeks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ── Nav scroll effect ──
     const nav = document.getElementById('navbar');
@@ -357,5 +392,6 @@
       });
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
