@@ -3542,3 +3542,28 @@ ul, ol { list-style: none; }
     margin-bottom: 20px !important;
   }
 }
+
+/* FINAL FINAL FINAL MOBILE TWEAKS */
+@media (max-width: 768px) {
+  /* Reduce space between header and hero section */
+  .hero-content {
+    margin-top: 4vh !important;
+  }
+  .hero > .container {
+    padding-top: 10px !important;
+  }
+  
+  /* Make "introducing AI-powered" pill smaller */
+  .hero-content > .hero-animate:first-child {
+    font-size: 0.8rem !important;
+    padding: 6px 16px !important;
+  }
+  
+  /* Ensure portfolio is fully responsive up to 768px */
+  .portfolio-full-grid, .portfolio-grid, #portfolioGrid {
+    grid-template-columns: 1fr !important;
+  }
+  .portfolio-card--featured {
+    grid-column: span 1 !important;
+  }
+}
