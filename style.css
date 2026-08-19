@@ -3291,3 +3291,238 @@ ul, ol { list-style: none; }
   100% { transform: translateY(-20px) scale(1.05); }
 }
 
+
+/* Comprehensive Mobile Fixes */
+@media (max-width: 768px) {
+  /* Prevent horizontal scrolling entirely */
+  body, html {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  * {
+    box-sizing: border-box !important;
+  }
+
+  /* Navbar */
+  .nav {
+    padding: 0 10px !important;
+    height: 50px !important;
+    top: 10px !important;
+    width: calc(100% - 20px) !important;
+  }
+  .nav-logo img {
+    height: 40px !important; /* Scale down logo */
+  }
+  .nav-cta-pill {
+    padding: 6px 12px !important;
+    font-size: 0.6rem !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    overflow: hidden !important;
+  }
+  .hero > .container {
+    padding-top: 80px !important;
+  }
+  .hero-animate {
+    padding: 8px 16px !important;
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    margin-top: 5vh !important;
+    padding: 0 !important;
+    width: 100% !important;
+    line-height: 1 !important;
+  }
+  .hero p {
+    font-size: 0.9rem !important;
+    padding: 0 10px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Hero bottom tags */
+  .hero-tags {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 0 5px !important;
+    gap: 12px !important;
+  }
+  .hero-tags span {
+    font-size: 0.65rem !important;
+  }
+
+  /* General sections */
+  .container {
+    padding: 0 15px !important;
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* DNA / Great Video Sells section */
+  .dna-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dna-card {
+    padding: 20px !important;
+  }
+
+  /* Trust Section */
+  .trust-logos {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+
+  /* Motion Explainer Section */
+  .performance-dashboard {
+    grid-template-columns: 1fr !important;
+  }
+  .process-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* 30 Min Call Section */
+  .call-cta-section {
+    padding: 40px 15px !important;
+  }
+  .call-headline {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  
+  /* Video/Image Containers */
+  video, img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix for specific absolute positioned elements overflowing */
+  .floating-element {
+    max-width: 80vw !important;
+  }
+}
+
+/* FINAL MOBILE OVERRIDES */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Typography limits */
+  h1, h2, h3, .hero-title, .call-headline {
+    word-break: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+    line-height: 1 !important;
+    margin-top: 5vh !important;
+  }
+  h2.reveal, .reveal h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+  }
+  .hero-animate, .capability-badges {
+    width: 100% !important;
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+  .capability-badge {
+    font-size: 0.7rem !important;
+  }
+  
+  /* Buttons */
+  a.magnetic {
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  .nav-cta-pill {
+    font-size: 0.65rem !important;
+    padding: 8px 12px !important;
+  }
+
+  /* Nav */
+  .nav {
+    padding: 0 10px !important;
+    height: auto !important;
+    min-height: 60px !important;
+  }
+  .nav-logo img {
+    height: 40px !important;
+  }
+
+  /* Sections */
+  .dna-grid, .process-grid, .performance-dashboard, .tech-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .trust-logos {
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+  }
+  .client-logo {
+    width: 45% !important;
+    justify-content: center !important;
+  }
+  
+  /* Video / iFrame */
+  video, iframe, img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Call Section */
+  .call-cta-section {
+    padding: 40px 20px !important;
+    border-radius: 20px !important;
+  }
+  .call-cta-section img {
+    max-width: 80px !important; /* Make floating heads smaller */
+  }
+}
+
+/* EXTRA SAFEGUARDS FOR MOBILE */
+@media (max-width: 768px) {
+  .hero-animate {
+    word-break: break-word !important;
+  }
+  .clients-marquee-wrapper {
+    overflow: hidden !important;
+    width: 100vw !important;
+    max-width: 100% !important;
+  }
+  .nav-links {
+    display: none !important; /* Hide links on mobile for now since there's no hamburger menu implemented in HTML */
+  }
+  .section {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    overflow: hidden !important;
+  }
+}
