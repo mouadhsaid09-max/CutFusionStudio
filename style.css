@@ -3505,3 +3505,40 @@ ul, ol { list-style: none; }
   }
 }
 
+
+/* FINAL FINAL MOBILE TWEAKS */
+@media (max-width: 768px) {
+  /* Make preloader logo bigger */
+  #preloader-video {
+    width: 60vw !important;
+    max-width: 250px !important;
+  }
+  
+  /* Make nav logo bigger */
+  .nav-logo img {
+    height: 55px !important;
+  }
+  
+  /* Fix huge top gap in hero */
+  .hero-content {
+    margin-top: 12vh !important;
+  }
+  .hero > .container {
+    padding-top: 40px !important;
+  }
+  
+  /* Make memojis much smaller */
+  .call-cta-section img {
+    width: 60px !important;
+    height: auto !important;
+    max-width: 60px !important;
+  }
+  
+  /* Reduce space between call section and contact section */
+  #contact {
+    padding-top: 40px !important;
+  }
+  .call-cta-section {
+    margin-bottom: 20px !important;
+  }
+}
