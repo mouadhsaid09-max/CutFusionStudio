@@ -33,10 +33,18 @@
       <img src="assets/images/logo.svg" alt="CutFusion Studio Logo" style="height: 110px; width: auto; object-fit: contain;">
     </a>
 
-    <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 10px 20px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
-      GET A QUOTE
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12" fill="#fff" fill-opacity="0.2"/><polygon points="10 8 16 12 10 16" fill="#000"/></svg>
-    </a>
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <div class="lang-toggle" style="display: flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; user-select: none;">
+        <span id="lang-btn-fr" style="cursor: pointer; color: #fff; transition: opacity 0.2s;">FR</span>
+        <span style="opacity: 0.3; color: #fff;">|</span>
+        <span id="lang-btn-en" style="cursor: pointer; color: rgba(255,255,255,0.4); transition: opacity 0.2s;">EN</span>
+      </div>
+
+      <a href="#contact" class="nav-cta-pill magnetic" data-hover style="display: flex; align-items: center; gap: 8px; background: var(--gradient-hero); padding: 10px 20px; border-radius: 100px; color: #000; font-family: var(--font-body); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;">
+        <span data-i18n="nav_cta">DEVIS RAPIDE</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12" fill="#fff" fill-opacity="0.2"/><polygon points="10 8 16 12 10 16" fill="#000"/></svg>
+      </a>
+    </div>
   </nav>
 
   <!-- Hero Section -->
@@ -59,12 +67,12 @@
     <div class="container" style="position: relative; z-index: 3;">
       <div class="hero-content" style="max-width: 1200px; margin: 0 auto; margin-top: 15vh; display: flex; flex-direction: column; align-items: center; text-align: center;">
         <div class="hero-animate" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.1rem; font-weight: 500; letter-spacing: -0.02em; color: #fff; margin-bottom: 24px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.15); padding: 12px 32px; border-radius: 100px; box-shadow: 0 0 40px rgba(255, 81, 0, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px);">
-          <span style="display: inline-block; width: 8px; height: 8px; background: #ff5100; border-radius: 50%; box-shadow: 0 0 8px #ff5100; animation: pulse-live 1.5s infinite;"></span> Introducing AI-Powered Video Studio 🎉
+          <span style="display: inline-block; width: 8px; height: 8px; background: #ff5100; border-radius: 50%; box-shadow: 0 0 8px #ff5100; animation: pulse-live 1.5s infinite;"></span> <span data-i18n="hero_pill">Studio Vidéo &amp; Motion Design IA 🎉</span>
         </div>
 
         <h1 style="font-family: 'Inter', system-ui, sans-serif; font-size: clamp(4rem, 10vw, 9.5rem); text-transform: none; line-height: 0.85; letter-spacing: -0.06em; margin-bottom: 32px; font-weight: 800; position: relative;">
-          <span class="hero-animate" style="display: block; background: linear-gradient(180deg, #ffffff 0%, #888888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">We make video</span>
-          <span class="hero-animate" style="display: block; color: #fff; position: relative; z-index: 2;">that converts<span style="color: var(--accent-primary); filter: drop-shadow(0 0 30px rgba(255,81,0,0.8));">.</span></span>
+          <span class="hero-animate" style="display: block; background: linear-gradient(180deg, #ffffff 0%, #888888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" data-i18n="hero_h1_1">Des vidéos qui</span>
+          <span class="hero-animate" style="display: block; color: #fff; position: relative; z-index: 2;" data-i18n="hero_h1_2">convertissent<span style="color: var(--accent-primary); filter: drop-shadow(0 0 30px rgba(255,81,0,0.8));">.</span></span>
           <span class="hero-animate" style="display: flex; justify-content: center; align-items: center; margin-top: 0px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));">
             <span id="typewriter" style="background: linear-gradient(180deg, #ffffff 0%, #ffcda8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap;"></span>
             <span class="type-cursor" style="display: inline-block; width: clamp(4px, 1vw, 8px); height: 0.85em; background: #fff; box-shadow: 0 0 20px #ff5100; margin-left: 12px; border-radius: 10px; animation: blink 1s step-end infinite;"></span>
@@ -72,28 +80,28 @@
         </h1>
 
         <div class="hero-animate" style="display: flex; flex-direction: column; align-items: center; gap: 32px; margin-bottom: 36px;">
-          <p style="font-family: var(--font-body); font-size: 1.05rem; max-width: 540px; line-height: 1.6; color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0;">
-            We manage your social media, blending premium design and high-end motion graphics to elevate your brand and dominate your online presence.
+          <p style="font-family: var(--font-body); font-size: 1.05rem; max-width: 540px; line-height: 1.6; color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0;" data-i18n="hero_desc">
+            Nous combinons artisanat 100% humain (tournage studio à Tunis, motion 2D/3D) et production hybride IA pour faire rayonner votre marque et dominer vos marchés.
           </p>
           <div style="display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;">
             <a href="#contact" class="magnetic" data-hover style="display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: rgba(255,81,0,0.15); color: #fff; padding: 10px 10px 10px 32px; border-radius: 100px; font-weight: 700; font-size: 1.05rem; text-decoration: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(255,81,0,0.15); border: 1px solid rgba(255,81,0,0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 15px 40px rgba(255,81,0,0.3)'; this.style.background='rgba(255,81,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255,81,0,0.15)'; this.style.background='rgba(255,81,0,0.15)';">
-              <span style="position: relative; z-index: 1;">Start Your Project</span>
+              <span style="position: relative; z-index: 1;" data-i18n="hero_cta_start">Lancer votre Projet</span>
               <span style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #000; color: #fff; border-radius: 50%;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
             </a>
             <a href="#services" class="btn-secondary magnetic" data-hover style="display: inline-flex; align-items: center; gap: 10px; color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 1rem; opacity: 0.7; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0.7';">
               <span style="width: 40px; height: 1px; background: var(--text-primary);"></span>
-              Explore Services
+              <span data-i18n="hero_cta_services">Découvrir les Services</span>
             </a>
           </div>
         </div>
 
         <div class="capability-badges hero-animate">
-          <span class="capability-badge">Real Cinema</span>
-          <span class="capability-badge">Motion 2D / 3D</span>
-          <span class="capability-badge">AI Generative</span>
-          <span class="capability-badge">Hybrid Hollywood</span>
-          <span class="capability-badge">VSL &amp; Avatars</span>
-          <span class="capability-badge">YouTube Growth</span>
+          <span class="capability-badge" data-i18n="badge_cinema">Cinéma Réel</span>
+          <span class="capability-badge" data-i18n="badge_motion">Motion 2D / 3D</span>
+          <span class="capability-badge" data-i18n="badge_ai">IA Générative</span>
+          <span class="capability-badge" data-i18n="badge_hybrid">Hybride Hollywood</span>
+          <span class="capability-badge" data-i18n="badge_vsl">VSL &amp; Avatars</span>
+          <span class="capability-badge" data-i18n="badge_yt">YouTube Growth</span>
         </div>
       </div>
     </div>
@@ -143,47 +151,47 @@
   <section class="section services-section" id="services" style="padding-top: 100px;">
     <div class="container">
       <h2 class="reveal" style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3.2rem); text-transform: uppercase; line-height: 1.15; margin-bottom: 48px; text-align: center; letter-spacing: -0.01em;">
-        MOTION, EDITING, <span style="color: var(--text-muted);">AI PRODUCTION</span><br>
-        —WE'VE GOT YOU <span style="color: var(--text-muted);">COVERED.</span>
+        <span data-i18n="services_h2_1">MOTION, TOURNAGE, </span><span style="color: var(--text-muted);" data-i18n="services_h2_2">PRODUCTION IA</span><br>
+        <span data-i18n="services_h2_3">— NOUS AVONS TOUT </span><span style="color: var(--text-muted);" data-i18n="services_h2_4">PRÉVU.</span>
       </h2>
 
       <div class="services-cards-wrapper" style="position: relative;">
         <div class="services-cards" style="display: flex; gap: 24px; overflow-x: auto; padding: 10px 40px 30px 4px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
           
-                              <!-- Card 1 (Vibrant Orange) -->
+          <!-- Card 1 (Vibrant Orange) - Motion Explainer 2D/3D SaaS & FinTech -->
           <div class="s-card reveal" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: var(--accent-primary); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(255,81,0,0.25); transition: all 0.4s ease;">
-            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
-              MOTION<br>EXPLAINER<br>FOR SAAS
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;" data-i18n="s1_title">
+              MOTION<br>EXPLAINER<br>2D / 3D SAAS
             </h3>
-            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.8); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
-              Cinematic animated explainers that turn complex SaaS products into instant "I need this" moments for your audience.
+            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.8); line-height: 1.5; font-family: var(--font-body); font-weight: 500;" data-i18n="s1_desc">
+              Vidéos explicatives 100% artisanat humain. Animation cinématique d'interfaces Figma et modélisation 3D pour transformer des flux complexes en conversions immédiates.
             </p>
           </div>
 
-          <!-- Card 2 (Solid White) -->
+          <!-- Card 2 (Solid White) - Tournage In-House & Outdoor à Tunis -->
           <div class="s-card reveal reveal-delay-1" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: #ffffff; border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(255,255,255,0.1); transition: all 0.4s ease;">
-            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
-              LONG &amp;<br>SHORT FORM<br>EDITING
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #000; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;" data-i18n="s2_title">
+              TOURNAGE<br>STUDIO &amp; EXT.<br>À TUNIS
             </h3>
-            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.7); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
-              Precision editing for podcasts, documentaries, short-form reels, and everything in between — on time, every time.
+            <p style="font-size: 0.85rem; color: rgba(0,0,0,0.7); line-height: 1.5; font-family: var(--font-body); font-weight: 500;" data-i18n="s2_desc">
+              100% Caméra réelle &amp; 0% IA. Tournage cinéma in-house dans notre studio à Tunis et extérieur pour marques de luxe, cosmétiques, hôtellerie et corporate.
             </p>
           </div>
 
-          <!-- Card 3 (Dark Charcoal) -->
+          <!-- Card 3 (Dark Charcoal) - Production Hybride "Hollywood" -->
           <div class="s-card reveal reveal-delay-2" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: #222222; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s ease;">
-            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
-              YOUTUBE<br>VIDEO<br>EDITING
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;" data-i18n="s3_title">
+              PRODUCTION<br>HYBRIDE<br>"HOLLYWOOD"
             </h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
-              Hooks, cuts, B-roll, and pacing optimized for watch time. We edit for the algorithm and your audience.
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;" data-i18n="s3_desc">
+              60% environnements IA photoréalistes + 40% finition studio senior &amp; étalonnage DaVinci Resolve Rec.709. Rendu cinéma international à coût optimisé.
             </p>
           </div>
 
-          <!-- Card 4 (Deep Black with 3D Orange Ring) -->
+          <!-- Card 4 (Deep Black with 3D Orange Ring) - VSL & Avatars IA -->
           <div class="s-card reveal reveal-delay-3" data-hover style="min-width: 360px; max-width: 420px; flex: 1.3; background: #0a0a0a; border: 1px solid rgba(255,81,0,0.3); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); transition: all 0.4s ease;">
-            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; position: relative; z-index: 2; font-weight: 900;">
-              AI VIDEO<br>POST<br>PRODUCTION
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; position: relative; z-index: 2; font-weight: 900;" data-i18n="s4_title">
+              VSL &amp; AVATARS<br>HAUTE<br>CONVERSION
             </h3>
             <div style="position: absolute; right: -30px; top: 40px; width: 200px; height: 200px; opacity: 0.85; z-index: 1; pointer-events: none;">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,35 +205,20 @@
                 </defs>
               </svg>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500; position: relative; z-index: 2; max-width: 78%;">
-              AI-assisted color grading, voice cloning, auto-subtitles, and scene generation — cutting production time in half without cutting quality.
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500; position: relative; z-index: 2; max-width: 78%;" data-i18n="s4_desc">
+              Publicités vidéo de vente et avatars génératifs multilingues (Français, Anglais, Derja Tunisienne) avec ingénierie de hooks pour maximiser le ROAS.
             </p>
           </div>
 
-          <!-- Card 5 (Social Media Design) -->
+          <!-- Card 5 (Social Media Design) - YouTube & Short-Form Growth -->
           <div class="s-card reveal" data-hover style="min-width: 300px; max-width: 320px; flex: 0 0 auto; background: rgba(255,81,0,0.05); border: 1px solid rgba(255,81,0,0.2); border-radius: 24px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px; scroll-snap-align: start; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: all 0.4s ease;">
-            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;">
-              SOCIAL MEDIA<br>DESIGN &amp;<br>MGMT
+            <h3 style="font-family: var(--font-display); font-size: 2.1rem; color: #ffffff; text-transform: uppercase; line-height: 1; margin-bottom: 40px; font-weight: 900;" data-i18n="s5_title">
+              YOUTUBE &amp;<br>SHORT-FORM<br>GROWTH
             </h3>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;">
-              End-to-end social media management. We create premium visual identity, daily content, and motion graphics that dominate the timeline.
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-body); font-weight: 500;" data-i18n="s5_desc">
+              Montage rétention pour créateurs et marques, sound design immersif, miniatures cliquables et gestion complète pour dominer les algorithmes.
             </p>
           </div>
-        </div>
-            <div class="note-body">
-              <h3 class="note-headline">AI-assisted grading, voice cloning, and scene generation cutting production time in half.</h3>
-            </div>
-            <div class="note-footer">
-              <span class="note-date">Future-Proof</span>
-              <div class="note-indicators">
-                <div class="note-indicator"></div>
-                <div class="note-indicator"></div>
-                <div class="note-indicator"></div>
-                <div class="note-indicator active"></div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <!-- Custom Orange Scrollbar Progress Bar -->
@@ -280,8 +273,8 @@
     <div class="container">
       <div class="section-header reveal" style="text-align: center;">
         <span class="section-tag" style="justify-content: center;">Our Process</span>
-        <h2 class="section-title">FROM BRIEF TO <span class="italic">DELIVERY</span></h2>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 550px; margin: 20px auto 0; line-height: 1.6;">A transparent, structured workflow — 100% remote, deadlines respected, feedback in real-time.</p>
+        <h2 class="section-title" data-i18n="process_title">DU BRIEF À LA <span class="italic">LIVRAISON</span></h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 580px; margin: 20px auto 0; line-height: 1.6;" data-i18n="process_sub">Un workflow transparent et structuré — En Studio à Tunis &amp; 100% Remote à l'International, délais respectés.</p>
       </div>
 
       <div class="process-grid">
@@ -448,54 +441,54 @@
       <div class="bento-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 360px 280px; gap: 16px;">
         
         <!-- Tile 1 -->
-        <div class="bento-tile reveal" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="SaaS Product Explainer" data-tag="Motion Design" data-desc="A dynamic 60-second explainer that simplified complex onboarding flows into an engaging visual narrative, boosting trial signups by 40%.">
+        <div class="bento-tile reveal" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="SaaS Product Explainer" data-tag="Motion Design (100% Humain)" data-desc="Vidéos explicatives 60s pour simplifier les fonctionnalités logicielles et maximiser les inscriptions d'essai." data-tools="After Effects, Cinema 4D, Figma" data-kpi="+40% Trial Signups (-32% Rebond)" data-duration="10 Jours">
           <div class="bento-thumb"><img src="assets/images/thumb_saas.png" alt="SaaS Product Explainer"></div>
           <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
-            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Motion Design</span>
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Motion Design (100% Humain)</span>
             <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">SaaS Product Explainer</h3>
-            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Dynamic 60s explainer — boosting trial signups by 40%.</p>
+            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Explainer cinématique 60s — +40% inscriptions gratuites &amp; -32% rebond.</p>
           </div>
         </div>
 
         <!-- Tile 2 -->
-        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="AI Fashion Campaign" data-tag="AI Generative" data-desc="Fully AI-generated fashion lookbook video with virtual environments — delivered in 5 days.">
+        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="AI Fashion &amp; Luxury Campaign" data-tag="Hybride IA + Cinéma" data-desc="Tournage réel combiné à des décors virtuels IA haute couture sans artefact avec étalonnage DaVinci Resolve Rec.709." data-tools="Midjourney v6, Runway Gen-3, DaVinci Resolve" data-kpi="3.4x ROAS sur Meta &amp; TikTok" data-duration="5 Jours">
           <div class="bento-thumb"><img src="assets/images/thumb_fashion.png" alt="AI Fashion Campaign"></div>
           <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
-            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">AI Generative</span>
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Hybride IA + Cinéma</span>
             <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">AI Fashion Campaign</h3>
           </div>
         </div>
 
         <!-- Tile 3 -->
-        <div class="bento-tile reveal" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="E-Commerce Ad Series" data-tag="Short Form" data-desc="15-second thumb-stopping ads for Meta and TikTok — 45% TSR and 3x ROAS.">
+        <div class="bento-tile reveal" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="E-Commerce Performance Ad Series" data-tag="VSL &amp; Performance Ads" data-desc="Publicités de 15 secondes optimisées pour stopper le scroll à 3 secondes avec variations de hooks en FR et Derja." data-tools="Premiere Pro, Topaz Video AI, After Effects" data-kpi="-45% CAC | 3.2x ROAS" data-duration="5 Jours">
           <div class="bento-thumb"><img src="assets/images/thumb_ecommerce.png" alt="E-Commerce Ad Series"></div>
           <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
-            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Short Form</span>
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">VSL &amp; Performance Ads</span>
             <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">E-Commerce Ad Series</h3>
           </div>
         </div>
 
         <!-- Tile 4 -->
-        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="Hybrid Hollywood Spot" data-tag="VFX + AI Cinema" data-desc="Cinematic brand film fusing real footage with AI environments — 4K broadcast ready.">
+        <div class="bento-tile reveal reveal-delay-1" style="background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="Hybrid Hollywood Spot" data-tag="VFX + Cinema Real" data-desc="Spot publicitaire cinématique fusionnant tournage en studio et effets visuels avancés — qualité 4K broadcast." data-tools="Sony FX3 Cinema, Runway Gen-3, DaVinci Studio" data-kpi="Qualité Broadcast 4K | 850k Vues" data-duration="7 Jours">
           <div class="bento-thumb"><img src="assets/images/thumb_hollywood.png" alt="Hybrid Hollywood Spot"></div>
           <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
-            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">VFX + AI Cinema</span>
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">VFX + Cinema Real</span>
             <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase;">Hybrid Hollywood Spot</h3>
           </div>
         </div>
 
         <!-- Tile 5 -->
-        <div class="bento-tile reveal reveal-delay-2" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="YouTube Channel Growth" data-tag="Content Strategy" data-desc="Complete YouTube overhaul — 2K to 50K subscribers in 6 months.">
+        <div class="bento-tile reveal reveal-delay-2" style="grid-column: span 2; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; position: relative; cursor: pointer;" data-title="YouTube Channel Growth" data-tag="YouTube &amp; Short Form" data-desc="Accompagnement complet de chaîne YouTube : montage rétention, sound design, miniatures à fort CTR." data-tools="Premiere Pro, After Effects, Photoshop" data-kpi="2K à 50K Abonnés en 6 mois" data-duration="Partenaire Retainer">
           <div class="bento-thumb"><img src="assets/images/thumb_youtube.png" alt="YouTube Channel Growth"></div>
           <div class="bento-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
           <div style="position: relative; z-index: 1; padding: 32px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.3) 60%, transparent 100%);">
-            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Content Strategy</span>
+            <span class="bento-tag" style="font-size: 0.7rem; font-weight: 600; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">YouTube &amp; Short Form</span>
             <h3 class="bento-title" style="font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px;">YouTube Channel Growth</h3>
-            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Complete YouTube overhaul — SEO, thumbnails, retention editing — 2K to 50K subscribers in 6 months.</p>
+            <p class="bento-desc" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Refonte complète : miniatures, rétention algorithmique — 2K à 50K abonnés en 6 mois.</p>
           </div>
         </div>
       </div>
@@ -641,7 +634,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="faq-answer">
-            You get the exact same senior art direction and broadcast quality as a top Paris or London studio, but at 40%â€“60% lower cost. Communication is 100% fluent in French and English, with direct access via Slack, Notion, and Miro.
+            You get the exact same senior art direction and broadcast quality as a top Paris or London studio, but at 40%–60% lower cost. Communication is 100% fluent in French and English, with direct access via Slack, Notion, and Miro.
           </div>
         </div>
 
@@ -651,7 +644,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
           <div class="faq-answer">
-            Most projects are delivered within 5 to 14 business days. For AI ad creative iterations, express 48â€“72h turnarounds are available to react to viral trends before your competitors.
+            Most projects are delivered within 5 to 14 business days. For AI ad creative iterations, express 48–72h turnarounds are available to react to viral trends before your competitors.
           </div>
         </div>
 
@@ -681,15 +674,19 @@
     <!-- 30-Min Call Section -->
   <section class="section" id="call-cta" style="padding-bottom: 0;">
     <div class="container">
-                      <div class="call-cta-section reveal">
-          <!-- Floating Memojis -->
-          <img src="assets/images/client_emoji_1.png" style="position: absolute; top: -10%; left: 5%; width: 120px; height: auto; z-index: 1; animation: floatMemoji 7s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
-          <img src="assets/images/client_emoji_2.png" style="position: absolute; bottom: 5%; left: 15%; width: 150px; height: auto; z-index: 1; animation: floatMemoji2 9s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
-          <img src="assets/images/client_emoji_3.png" style="position: absolute; top: 10%; right: 10%; width: 130px; height: auto; z-index: 1; animation: floatMemoji3 8s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
-          <img src="assets/images/client_emoji_1.png" style="position: absolute; bottom: -10%; right: 25%; width: 160px; height: auto; z-index: 1; animation: floatMemoji 10s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transform: scaleX(-1);" alt="Memoji">
-          
-                <a href="#contact" class="call-avatar-pill glass-pill-cta magnetic" data-hover>Better call us</a>
-        <h2 class="call-headline" style="font-family: 'Inter', system-ui, sans-serif; letter-spacing: -0.06em; text-transform: none; line-height: 0.85; font-weight: 800;"><span style="background: linear-gradient(180deg, #ffffff 0%, #ffcda8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Let's have a<br>30-min call</span></h2>
+      <div class="call-cta-section reveal">
+        <!-- Floating Memojis -->
+        <img src="assets/images/client_emoji_1.png" style="position: absolute; top: -10%; left: 5%; width: 120px; height: auto; z-index: 1; animation: floatMemoji 7s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+        <img src="assets/images/client_emoji_2.png" style="position: absolute; bottom: 5%; left: 15%; width: 150px; height: auto; z-index: 1; animation: floatMemoji2 9s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+        <img src="assets/images/client_emoji_3.png" style="position: absolute; top: 10%; right: 10%; width: 130px; height: auto; z-index: 1; animation: floatMemoji3 8s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" alt="Memoji">
+        <img src="assets/images/client_emoji_1.png" style="position: absolute; bottom: -10%; right: 25%; width: 160px; height: auto; z-index: 1; animation: floatMemoji 10s infinite alternate ease-in-out; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); transform: scaleX(-1);" alt="Memoji">
+        
+        <a href="https://wa.me/21658829798?text=Bonjour%20CutFusion%20Studio,%20je%20souhaite%20discuter%20d'un%20projet%20vidéo." target="_blank" rel="noopener" class="call-avatar-pill glass-pill-cta magnetic" data-hover><span data-i18n="call_pill">Discutons sur WhatsApp</span></a>
+        <h2 class="call-headline" style="font-family: 'Inter', system-ui, sans-serif; letter-spacing: -0.06em; text-transform: none; line-height: 0.85; font-weight: 800;">
+          <a href="https://wa.me/21658829798?text=Bonjour%20CutFusion%20Studio,%20je%20souhaite%20discuter%20d'un%20projet%20vidéo." target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+            <span style="background: linear-gradient(180deg, #ffffff 0%, #ffcda8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><span data-i18n="call_h2">Un appel de<br>30 minutes ?</span></span>
+          </a>
+        </h2>
       </div>
     </div>
   </section>
@@ -699,17 +696,17 @@
     <div class="container">
       <div class="contact-wrapper">
         <div class="contact-info reveal">
-          <h3>LET'S TALK ABOUT YOUR <span class="italic">NEXT CAMPAIGN</span></h3>
-          <p>Discover how CutFusion can produce your video assets with unmatched premium quality — remotely, on your timeline. Free quote, response within 24h.</p>
+          <h3 data-i18n="contact_h3_wrap">PARLONS DE VOTRE <span class="italic">PROCHAINE CAMPAGNE</span></h3>
+          <p data-i18n="contact_p">Découvrez comment CutFusion produit vos contenus avec une qualité cinéma — En Studio à Tunis ou 100% Remote. Devis gratuit, réponse sous 24h.</p>
           <div class="contact-details">
             <div class="contact-detail" data-hover>
               <div class="contact-detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
               <div><div class="contact-detail-label">Email</div><div class="contact-detail-text">contact@cutfusion.com</div></div>
             </div>
-            <div class="contact-detail" data-hover>
+            <a href="https://wa.me/21658829798?text=Bonjour%20CutFusion%20Studio,%20je%20souhaite%20discuter%20d'un%20projet%20vidéo." target="_blank" rel="noopener" class="contact-detail" data-hover style="text-decoration: none; color: inherit;">
               <div class="contact-detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-              <div><div class="contact-detail-label">Phone</div><div class="contact-detail-text">+216 58 829 798</div></div>
-            </div>
+              <div><div class="contact-detail-label">WhatsApp / Phone</div><div class="contact-detail-text">+216 58 829 798</div></div>
+            </a>
           </div>
         </div>
         <form class="contact-form reveal-right" id="contactForm">
@@ -742,8 +739,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2025 CutFusion Studio&trade; — All rights reserved.</span>
-        <span><a href="#">Privacy</a> Â· <a href="#">Terms</a></span>
+        <span>&copy; 2026 CutFusion Studio&trade; — All rights reserved.</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
       </div>
     </div>
   </footer>
